@@ -45,6 +45,10 @@ export default async function Page() {
   }
 
   const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API error: ${response.status} ${errorText}`);
+  }
   const { aggregatedData } = await response.json();
 
   // Transform the stats data into the leaderboard format
