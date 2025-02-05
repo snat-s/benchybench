@@ -48,7 +48,8 @@ export default async function Page(props: PageProps) {
   const params = await props.params;
   const { id } = params;
 
-  const gamesResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/games/${id}`, { next: { revalidate: 300 } }); // revalidate every 5 minutes
+  const baseUrl = process.env.BASE_URL;
+  const gamesResponse = await fetch(`${baseUrl}/api/games/${id}`, { next: { revalidate: 300 } }); // revalidate every 5 minutes
 
   // If not found or error
   if (!gamesResponse.ok) {

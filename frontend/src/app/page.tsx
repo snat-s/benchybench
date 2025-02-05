@@ -36,8 +36,14 @@ type GameData = {
 };
 
 export default async function Page() {
-  // Fetch leaderboard stats
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stats`, { next: { revalidate: 300 } });
+  // Use the BASE_URL environment variable to build an absolute URL.
+  const baseUrl = process.env.BASE_URL; // e.g., "http://localhost:3000"
+
+  if (!baseUrl) {
+    throw new Error("BASE_URL is not defined. Please set it in your environment variables.");
+  }
+
+  const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
   const { aggregatedData } = await response.json();
 
   // Transform the stats data into the leaderboard format
@@ -57,7 +63,7 @@ export default async function Page() {
 
   // Instead of fetching only gameIds,
   // modify your API to return the complete game data for the 16 latest games.
-  const gamesResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/games?limit=16`, { next: { revalidate: 300 } });
+  const gamesResponse = await fetch(`${baseUrl}/api/games?limit=16`, { next: { revalidate: 300 } });
   const { games } = await gamesResponse.json(); // now "games" is an array of game data objects
 
   return (
@@ -86,7 +92,7 @@ export default async function Page() {
         Made with ❤️ by <a href="https://www.x.com/gregkamradt">Greg Kamradt</a>
       </p>
       <p style={{ textAlign: "center", fontSize: "0.8em" }}>
-        Last updated: {new Date().toLocaleString()}
+        Last updated: February 5, 2025 8:27 AM PT
       </p>
     </div>
   )

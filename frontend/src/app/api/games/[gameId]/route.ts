@@ -12,8 +12,8 @@ export async function GET(
     
     const gameFilePath = path.join(
       process.cwd(),
-      '..',
-      'backend',
+      'src',
+      'data',
       'completed_games',
       `snake_game_${gameId}.json`
     );

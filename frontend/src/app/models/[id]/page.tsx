@@ -26,7 +26,8 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
   const { id: modelId } = await params;
   
   // Fetch the full stats
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stats`, { next: { revalidate: 300 } });
+  const baseUrl = process.env.BASE_URL;
+  const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
   const stats = await response.json();
 
   // Use the awaited modelId
