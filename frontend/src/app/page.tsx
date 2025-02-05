@@ -1,0 +1,60 @@
+import AnimatedTitle from '@/components/AnimatedTitle'
+import AsciiSnakeGame from '@/components/AsciiSnakePlayer';
+import Leaderboard from '@/components/Leaderboard'
+
+export default async function Page() {
+  // Fetch leaderboard stats
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stats`, { next: { revalidate: 300 } });
+  const { aggregatedData } = await response.json();
+
+  // Transform the stats data into the leaderboard format
+  const leaderboardData = Object.entries(aggregatedData)
+    .map(([model, data]: [string, any], index) => ({
+      rank: index + 1,
+      model: model,
+      elo: data.elo || 1000,
+      wins: data.wins || 0,
+      losses: data.losses || 0,
+      ties: data.ties || 0,
+      apples: data.apples_eaten || 0,
+      link: `/models/${model}`
+    }))
+    .sort((a, b) => b.elo - a.elo)
+    .map((item, index) => ({ ...item, rank: index + 1 }));
+
+  // Instead of fetching only gameIds,
+  // modify your API to return the complete game data for the 16 latest games.
+  const gamesResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/games?limit=16`, { next: { revalidate: 300 } });
+  const { games } = await gamesResponse.json(); // now "games" is an array of game data objects
+
+  return (
+    <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+      <AnimatedTitle />
+      <hr />
+      <p>
+        What happens when you make two LLMs fight in snake arena?
+        <br />
+        We tested 34 LLMs against each other to see who would win.
+      </p>
+      <hr />
+      <br />
+      <h2>SnakeBench Rankings:</h2>
+      <br />
+      <Leaderboard data={leaderboardData} />
+      <br />
+      <br />
+      <h3>Latest Matches:</h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-4 pt-4">
+        {games.map((game: any) => (
+          <AsciiSnakeGame key={game.metadata.game_id} initialGameData={game} />
+        ))}
+      </div>
+      <p>
+        Made with ❤️ by <a href="https://www.x.com/gregkamradt">Greg Kamradt</a>
+      </p>
+      <p style={{ textAlign: "center", fontSize: "0.8em" }}>
+        Last updated: {new Date().toLocaleString()}
+      </p>
+    </div>
+  )
+}
