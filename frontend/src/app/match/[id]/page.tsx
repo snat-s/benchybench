@@ -49,6 +49,7 @@ export default async function Page(props: PageProps) {
   const { id } = params;
 
   const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL}`;
+  console.log("DEBUG: Computed baseUrl:", baseUrl); // Log it!
   const gamesResponse = await fetch(`${baseUrl}/api/games/${id}`, { next: { revalidate: 300 } }); // revalidate every 5 minutes
 
   // If not found or error

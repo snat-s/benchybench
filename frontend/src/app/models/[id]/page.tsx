@@ -29,6 +29,7 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
   
   // Fetch the full stats
   const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL}`;
+  console.log("DEBUG: Computed baseUrl:", baseUrl); // Log it!
   const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
   const stats = await response.json();
 
