@@ -18,6 +18,13 @@ interface Round {
   move_history?: Array<{ [key: string]: Move }>;
 }
 
+interface DeathInfo {
+  snake_id: string;
+  round: number;
+  cause: string;
+  by?: string;
+}
+
 interface GameData {
   metadata: {
     game_id: string;
@@ -26,7 +33,7 @@ interface GameData {
     models: { [key: string]: string };
     game_result: { [key: string]: string };
     final_scores: { [key: string]: number };
-    death_info?: any;
+    death_info?: DeathInfo[];
     max_rounds: number;
     actual_rounds: number;
   };

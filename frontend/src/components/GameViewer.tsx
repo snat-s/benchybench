@@ -92,9 +92,7 @@ export default function GameViewer({ gameData }: GameViewerProps) {
     setIsPlaying((prev) => !prev);
   };
 
-  // Safely get the current round
-  const currentRound = rounds[currentRoundIndex] || {};
-  
+ 
   // Get the NEXT round's move history (for showing upcoming rationale)
   const nextRound = rounds[currentRoundIndex + 1] || {};
   const nextMoveHistory = nextRound.move_history || [];

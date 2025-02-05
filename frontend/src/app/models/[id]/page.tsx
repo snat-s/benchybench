@@ -21,9 +21,9 @@ interface ModelStats {
   games: Game[];
 }
 
-export default async function ModelGamesPage({ params }: { params: { id: string } }) {
-  // Await the params.id before using it
-  const modelId = await params.id;
+export default async function ModelGamesPage({ params }: { params: Promise<{ id: string }> }) {
+  // Await the params object
+  const { id: modelId } = await params;
   
   // Fetch the full stats
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stats`, { next: { revalidate: 300 } });
@@ -37,7 +37,7 @@ export default async function ModelGamesPage({ params }: { params: { id: string 
       <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         <AnimatedTitle />
         <hr />
-        <p>Model "{modelId}" not found.</p>
+        <p>Model &quot;{modelId}&quot; not found.</p>
       </div>
     );
   }

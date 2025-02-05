@@ -2,14 +2,47 @@ import AnimatedTitle from '@/components/AnimatedTitle'
 import AsciiSnakeGame from '@/components/AsciiSnakePlayer';
 import Leaderboard from '@/components/Leaderboard'
 
+// Add these type definitions at the top of the file
+type StatsData = {
+  elo: number;
+  wins: number;
+  losses: number;
+  ties: number;
+  apples_eaten: number;
+};
+
+type GameData = {
+  metadata: {
+    game_id: string;
+    models: { [key: string]: string };
+    game_result: { [key: string]: string };
+    final_scores: { [key: string]: number };
+  };
+  rounds: {
+    round_number: number;
+    snake_positions: {
+      [key: string]: [number, number][];
+    };
+    alive: {
+      [key: string]: boolean;
+    };
+    scores: {
+      [key: string]: number;
+    };
+    width: number;
+    height: number;
+    apples: [number, number][];
+  }[];
+};
+
 export default async function Page() {
   // Fetch leaderboard stats
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stats`, { next: { revalidate: 300 } });
   const { aggregatedData } = await response.json();
 
   // Transform the stats data into the leaderboard format
-  const leaderboardData = Object.entries(aggregatedData)
-    .map(([model, data]: [string, any], index) => ({
+  const leaderboardData = Object.entries(aggregatedData as Record<string, StatsData>)
+    .map(([model, data], index) => ({
       rank: index + 1,
       model: model,
       elo: data.elo || 1000,
@@ -34,7 +67,7 @@ export default async function Page() {
       <p>
         What happens when you make two LLMs fight in snake arena?
         <br />
-        We tested 34 LLMs against each other to see who would win.
+        We tested 12 LLMs against each other to see who would win.
       </p>
       <hr />
       <br />
@@ -45,7 +78,7 @@ export default async function Page() {
       <br />
       <h3>Latest Matches:</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-4 pt-4">
-        {games.map((game: any) => (
+        {games.map((game: GameData) => (
           <AsciiSnakeGame key={game.metadata.game_id} initialGameData={game} />
         ))}
       </div>

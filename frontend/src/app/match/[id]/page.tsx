@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import GameViewer from '@/components/GameViewer'
 
 interface GameData {
-  // Adjust this interface to match your exact JSON structure
   metadata: {
     game_id: string;
     start_time: string;
@@ -11,14 +10,42 @@ interface GameData {
     models: Record<string, string>;
     game_result: Record<string, string>;
     final_scores: Record<string, number>;
-    death_info: any;
+    death_info: Record<string, { reason: string }>;
     max_rounds: number;
     actual_rounds: number;
   };
-  rounds: Array<any>;
+  rounds: {
+    round_number: number;
+    move_history?: {
+      [modelId: string]: {
+        move: string;
+        rationale: string;
+      };
+    }[];
+    snake_positions: {
+      [key: string]: [number, number][];
+    };
+    alive: {
+      [key: string]: boolean;
+    };
+    scores: {
+      [key: string]: number;
+    };
+    width: number;
+    height: number;
+    apples: [number, number][];
+  }[];
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function Page(props: PageProps) {
+  const params = await props.params;
   const { id } = params;
 
   const gamesResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/games/${id}`, { next: { revalidate: 300 } }); // revalidate every 5 minutes
@@ -38,8 +65,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <AnimatedTitle />
-      {/* Title of the match */}
-      {/* <h2>{modelOne} vs. {modelTwo}</h2> */}
+      <h2>{modelOne} vs. {modelTwo}</h2>
       
       {/* GameViewer is a client component that will show the ASCII board 
           and the logic for Next/Back/Play plus rationales. */}
