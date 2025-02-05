@@ -17,12 +17,6 @@ export const metadata: Metadata = {
   description: "SnakeBench is a platform for testing and comparing LLMs in a snake arena.",
   icons: {
     icon: '🐍',
-    shortcut: '🐍',
-    apple: '🐍',
-    other: {
-      rel: 'icon',
-      url: '🐍',
-    },
   },
 };
 
