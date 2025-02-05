@@ -5,6 +5,8 @@ interface Game {
   my_score: number;
   opponent_score: number;
   opponent_model: string;
+  start_time: string;
+  end_time: string;
   result: string;
   death_info?: {
     reason: string;
@@ -26,7 +28,7 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
   const { id: modelId } = await params;
   
   // Fetch the full stats
-  const baseUrl = process.env.BASE_URL;
+  const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL}`;
   const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
   const stats = await response.json();
 
@@ -53,6 +55,8 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
         <thead>
           <tr>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Opponent</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Start Time</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Duration</th>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Outcome</th>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Loss Reason</th>
             <th style={{ border: "1px solid #ddd", padding: "8px", textDecoration: "underline" }}>View Match</th>
@@ -70,6 +74,26 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
             return (
               <tr key={game.game_id || index}>
                 <td style={{ border: "1px solid #ddd", padding: "8px" }}>{game.opponent_model}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {new Date(game.start_time).toLocaleString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit', 
+                    day: '2-digit',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                  }).replace(',','')}
+                </td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {(() => {
+                    const start = new Date(game.start_time);
+                    const end = new Date(game.end_time);
+                    const diffMs = end.getTime() - start.getTime();
+                    const minutes = Math.floor(diffMs / 60000);
+                    const seconds = Math.floor((diffMs % 60000) / 1000);
+                    return `${minutes}min ${seconds}sec`;
+                  })()}
+                </td>
                 <td style={{ border: "1px solid #ddd", padding: "8px", backgroundColor: outcomeBackground }}>
                   {game.result}
                 </td>

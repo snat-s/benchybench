@@ -149,7 +149,9 @@ def update_model_stats(game_data, stats, ratings):
             "my_score": final_scores.get(pid, 0),
             "opponent_score": opponent_score,
             "opponent_model": opponent_model,
-            "result": result
+            "result": result,
+            "start_time": metadata.get("start_time"),
+            "end_time": metadata.get("end_time")
         }
         
         # Include death_info if this model died in this game.
@@ -203,6 +205,7 @@ def main():
         description="Calculate Elo ratings and gather stats from a folder of game result JSON files."
     )
     parser.add_argument("folder", help="Path to folder containing game result JSON files.")
+    parser.add_argument("--output", help="Path to output folder for stats.json")
     args = parser.parse_args()
 
     # Find all JSON files
@@ -259,7 +262,7 @@ def main():
 
     ### ADDED FOR STATS: SAVE stats.json ###
     # Write out stats aggregated across all games
-    output_path = os.path.join(args.folder, "stats.json")
+    output_path = os.path.join(args.output, "stats.json")
     with open(output_path, "w") as f:
         json.dump(stats, f, indent=2)
 

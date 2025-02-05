@@ -37,7 +37,7 @@ type GameData = {
 
 export default async function Page() {
   // Use the BASE_URL environment variable to build an absolute URL.
-  const baseUrl = process.env.BASE_URL; // e.g., "http://localhost:3000"
+  const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL}`;
 
   if (!baseUrl) {
     throw new Error("BASE_URL is not defined. Please set it in your environment variables.");
