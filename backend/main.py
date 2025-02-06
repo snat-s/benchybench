@@ -525,7 +525,7 @@ class SnakeGame:
                 "move_history": state.move_history
             }
             # Note: If any data is in tuples, it's okay because JSON
-            # can store them as lists. But Python’s json library will 
+            # can store them as lists. But Python's json library will 
             # automatically convert (x, y) to [x, y].
             output.append(state_dict)
         return output

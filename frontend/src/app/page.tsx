@@ -44,9 +44,17 @@ export default async function Page() {
     throw new Error("BASE_URL is not defined. Please set it in your environment variables.");
   }
 
-  const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
-  console.log("DEBUG: Response:", response);
-  const { aggregatedData } = await response.json();
+  let aggregatedData: Record<string, StatsData> = {};
+  try {
+    const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
+    console.log("DEBUG: Response:", response);
+    const data = await response.json();
+    aggregatedData = data.aggregatedData;
+  } catch (error) {
+    console.error("Error fetching stats:", error);
+    // Optionally set up fallback data
+    aggregatedData = {};
+  }
 
   // Transform the stats data into the leaderboard format
   const leaderboardData = Object.entries(aggregatedData as Record<string, StatsData>)
@@ -63,10 +71,16 @@ export default async function Page() {
     .sort((a, b) => b.elo - a.elo)
     .map((item, index) => ({ ...item, rank: index + 1 }));
 
-  // Instead of fetching only gameIds,
-  // modify your API to return the complete game data for the 16 latest games.
-  const gamesResponse = await fetch(`${baseUrl}/api/games?limit=16`, { next: { revalidate: 300 } });
-  const { games } = await gamesResponse.json(); // now "games" is an array of game data objects
+  let games: GameData[] = [];
+  try {
+    const gamesResponse = await fetch(`${baseUrl}/api/games?limit=16`, { next: { revalidate: 300 } });
+    const gamesData = await gamesResponse.json();
+    games = gamesData.games;
+  } catch (error) {
+    console.error("Error fetching games:", error);
+    // Optionally set up fallback content
+    games = [];
+  }
 
   return (
     <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
@@ -97,5 +111,5 @@ export default async function Page() {
         Last updated: February 5, 2025 8:27 AM PT
       </p>
     </div>
-  )
+  );
 }
