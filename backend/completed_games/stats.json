@@ -1,1 +1,3098 @@
-{}
+{
+  "gpt-3.5-turbo-0125": {
+    "wins": 2,
+    "losses": 17,
+    "ties": 3,
+    "apples_eaten": 6,
+    "elo": 1338.9876222829796,
+    "games": [
+      {
+        "game_id": "6fa3c537-204c-46e6-9bfb-c4541fe8b75e",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.396352",
+        "end_time": "2025-02-04T20:08:03.706510",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "baaa7b6f-cbe7-4b9d-b4f7-f18246ccb3f8",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.049042",
+        "end_time": "2025-02-04T20:08:03.939808",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "b40e8722-b20f-4026-9ebe-0248f706619d",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.757908",
+        "end_time": "2025-02-04T20:08:06.240584",
+        "death_info": {
+          "reason": "wall",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "39d73908-5e5f-456d-ad6d-1b86bbb64c57",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.371326",
+        "end_time": "2025-02-04T20:08:16.793600"
+      },
+      {
+        "game_id": "7471ec0a-e9f9-4cdd-8e46-24d9c65e4009",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.821337",
+        "end_time": "2025-02-04T20:08:19.167638",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "744fa4d0-e259-4c20-9de6-62d11a191952",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.026268",
+        "end_time": "2025-02-04T20:08:26.437463",
+        "death_info": {
+          "reason": "wall",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "226597a6-5097-46b3-b90f-338750e96382",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.346382",
+        "end_time": "2025-02-04T20:08:39.361347"
+      },
+      {
+        "game_id": "ee5ad49e-22c8-4ad9-a3ae-d07866e3b998",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.510234",
+        "end_time": "2025-02-04T20:08:47.097751",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "c8c4fe34-7c5d-42fc-88ca-4fb2057c76b8",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.595853",
+        "end_time": "2025-02-04T20:08:51.190566",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "9fdfc943-4505-40bb-98fa-64e7a2941ba7",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.828735",
+        "end_time": "2025-02-04T20:08:55.586667",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "61dfafd6-0cbb-4343-b8a7-07ae19814d63",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.418636",
+        "end_time": "2025-02-04T20:10:23.336678",
+        "death_info": {
+          "reason": "wall",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "8c48f8db-69cf-4879-bbe0-646560353e37",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.450267",
+        "end_time": "2025-02-04T20:31:21.034544",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "7205b67f-8e29-49e8-9df1-1eaa7b9a6283",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.413718",
+        "end_time": "2025-02-04T20:31:21.786366",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "a68c3aac-a179-41cc-95c9-4b7e28852699",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.430047",
+        "end_time": "2025-02-04T20:31:31.687139",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "068e982a-fe82-43d1-a259-d4a9f56a26d7",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.647063",
+        "end_time": "2025-02-04T20:31:32.461219",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "acf46d0f-88fe-4aa2-87db-143c121ac544",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.305350",
+        "end_time": "2025-02-04T20:31:44.052493",
+        "death_info": {
+          "reason": "wall",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "6c369c11-d3a4-4f76-8d78-278d8d7915ad",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.901646",
+        "end_time": "2025-02-04T20:31:46.543974",
+        "death_info": {
+          "reason": "wall",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "15f63633-0cfa-44e8-a860-233fc2933cff",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.450560",
+        "end_time": "2025-02-04T20:31:52.305916",
+        "death_info": {
+          "reason": "wall",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "f0a43fef-d681-43d8-a251-d2f26538afa6",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.331880",
+        "end_time": "2025-02-04T20:31:58.036856",
+        "death_info": {
+          "reason": "wall",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "4099550d-9ed5-4b19-af0d-d3f10475122a",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.198048",
+        "end_time": "2025-02-04T20:32:09.917720",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "14fa771e-0355-4a32-9c5e-ddd9207f28b9",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.058923",
+        "end_time": "2025-02-04T20:32:33.494725",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "f2bba444-c043-41e1-b882-3c5e3135984a",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.188877",
+        "end_time": "2025-02-04T20:32:44.099934",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      }
+    ]
+  },
+  "o3-mini": {
+    "wins": 15,
+    "losses": 1,
+    "ties": 6,
+    "apples_eaten": 63,
+    "elo": 1658.839659795345,
+    "games": [
+      {
+        "game_id": "6fa3c537-204c-46e6-9bfb-c4541fe8b75e",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.396352",
+        "end_time": "2025-02-04T20:08:03.706510"
+      },
+      {
+        "game_id": "1a7e9927-6e83-4a44-baa9-8bc734a527c6",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.950366",
+        "end_time": "2025-02-04T20:08:55.701895",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "dfea1ee2-2322-4d16-b04e-a0e8589dac0a",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.939914",
+        "end_time": "2025-02-04T20:09:25.350157",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "c7e24762-c998-4657-8ef4-153f3984beed",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.157985",
+        "end_time": "2025-02-04T20:09:49.345190"
+      },
+      {
+        "game_id": "d44ace05-ac89-4c7a-a5c9-65b44a476785",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.034398",
+        "end_time": "2025-02-04T20:10:35.132739"
+      },
+      {
+        "game_id": "1cda0ede-9d6c-46cf-9d5b-fe28eed3e314",
+        "my_score": 4,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.090029",
+        "end_time": "2025-02-04T20:11:02.464907",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "ddfbf336-0c23-456b-b345-c9599de02ca1",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.128696",
+        "end_time": "2025-02-04T20:11:35.658588"
+      },
+      {
+        "game_id": "239ee075-b35a-4727-86c5-a6053f2a5e5f",
+        "my_score": 4,
+        "opponent_score": 6,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.684096",
+        "end_time": "2025-02-04T20:12:57.259048",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 15
+        }
+      },
+      {
+        "game_id": "2aa0d8e3-6c59-4bd4-a892-65e2626b2e90",
+        "my_score": 4,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:53.978059",
+        "end_time": "2025-02-04T20:14:24.689770"
+      },
+      {
+        "game_id": "681aebc9-930a-4385-87a7-d408d6616f3f",
+        "my_score": 8,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.926630",
+        "end_time": "2025-02-04T20:16:11.171667"
+      },
+      {
+        "game_id": "693e7347-0053-4723-8ebe-f8309177dfc9",
+        "my_score": 7,
+        "opponent_score": 12,
+        "opponent_model": "o1-mini",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.646968",
+        "end_time": "2025-02-04T20:26:27.080699"
+      },
+      {
+        "game_id": "c3f7c9ff-8b32-44b2-addc-2bd5c91b4bbd",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.781890",
+        "end_time": "2025-02-04T20:31:53.359684"
+      },
+      {
+        "game_id": "1a22c094-f798-4403-846f-f169e70b7f28",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:14.277038",
+        "end_time": "2025-02-04T20:32:01.751672",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "4333fcdf-f978-44d1-8cfa-0f4b66bd6d37",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.929505",
+        "end_time": "2025-02-04T20:32:06.932239"
+      },
+      {
+        "game_id": "4099550d-9ed5-4b19-af0d-d3f10475122a",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.198048",
+        "end_time": "2025-02-04T20:32:09.917720"
+      },
+      {
+        "game_id": "63b641c5-3c38-484c-a80e-04657036b9ab",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.262783",
+        "end_time": "2025-02-04T20:32:19.642448",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "4b824d47-4134-4e48-a3d3-de59ddf15ed3",
+        "my_score": 4,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:14.719602",
+        "end_time": "2025-02-04T20:34:01.105789",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "def638ce-86ac-4a35-980b-7944b172a480",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.604467",
+        "end_time": "2025-02-04T20:34:48.366680"
+      },
+      {
+        "game_id": "64f01a1b-e4f8-4670-af3b-5a4a4afa78e7",
+        "my_score": 4,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.880519",
+        "end_time": "2025-02-04T20:36:32.590166"
+      },
+      {
+        "game_id": "3f05638e-9989-4cc3-977e-c0bc809ea8a1",
+        "my_score": 3,
+        "opponent_score": 8,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.980433",
+        "end_time": "2025-02-04T20:36:34.444196"
+      },
+      {
+        "game_id": "6120b59d-cdea-4157-a517-54a8cafe8a7c",
+        "my_score": 6,
+        "opponent_score": 4,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.859400",
+        "end_time": "2025-02-04T20:37:21.528842"
+      },
+      {
+        "game_id": "38d0be5f-744e-4a70-929a-f46baa888069",
+        "my_score": 6,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.444547",
+        "end_time": "2025-02-04T20:39:18.749030"
+      }
+    ]
+  },
+  "claude-3-haiku-20240307": {
+    "wins": 2,
+    "losses": 16,
+    "ties": 4,
+    "apples_eaten": 10,
+    "elo": 1355.0999441939591,
+    "games": [
+      {
+        "game_id": "c8e026e2-44a4-4431-b744-87900b2d85e1",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.364968",
+        "end_time": "2025-02-04T20:08:03.909075",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "96b2dadf-8cdb-41cd-8b07-b89d7320c09b",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.221265",
+        "end_time": "2025-02-04T20:08:08.880771",
+        "death_info": {
+          "reason": "wall",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "8c6ae7e5-31ec-419d-960c-07ac3b3227e6",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.225481",
+        "end_time": "2025-02-04T20:08:10.030338",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "7471ec0a-e9f9-4cdd-8e46-24d9c65e4009",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.821337",
+        "end_time": "2025-02-04T20:08:19.167638"
+      },
+      {
+        "game_id": "574c9578-d15b-4588-89a1-6b9f23630326",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.891200",
+        "end_time": "2025-02-04T20:08:39.804531",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "fa3530d3-ecb5-42d1-9030-2d0b3f3e3139",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.284700",
+        "end_time": "2025-02-04T20:08:49.780552",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "26f0c199-1bfd-479d-a5e3-94988fe11670",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.774472",
+        "end_time": "2025-02-04T20:08:53.675221",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "13ea391d-a609-44da-878f-51f993bc3d9a",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.442646",
+        "end_time": "2025-02-04T20:09:04.860806",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "ea592cd3-8b5b-4a80-87c5-e18ec809418f",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.373391",
+        "end_time": "2025-02-04T20:09:20.581045",
+        "death_info": {
+          "reason": "wall",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "c7e24762-c998-4657-8ef4-153f3984beed",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.157985",
+        "end_time": "2025-02-04T20:09:49.345190",
+        "death_info": {
+          "reason": "wall",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "ad3c75a9-4bb9-4f53-aa41-a06cdae0ce4a",
+        "my_score": 0,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.143201",
+        "end_time": "2025-02-04T20:10:41.586286",
+        "death_info": {
+          "reason": "wall",
+          "round": 15
+        }
+      },
+      {
+        "game_id": "69579adf-f799-45d7-9eec-fc8e84cf25eb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.655132",
+        "end_time": "2025-02-04T20:31:21.172295",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "d8641393-6c90-4299-98a2-6a6fa62a8ecb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.453730",
+        "end_time": "2025-02-04T20:31:27.514640",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "a3c5282a-281b-42d7-8f4b-f51389a1cda1",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.852674",
+        "end_time": "2025-02-04T20:31:35.949802",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "acf46d0f-88fe-4aa2-87db-143c121ac544",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.305350",
+        "end_time": "2025-02-04T20:31:44.052493"
+      },
+      {
+        "game_id": "c3f7c9ff-8b32-44b2-addc-2bd5c91b4bbd",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.781890",
+        "end_time": "2025-02-04T20:31:53.359684",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "58830ba3-6c2e-4df5-81a9-2dbec9340037",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:15.099512",
+        "end_time": "2025-02-04T20:31:54.816656",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "c415abfe-3edb-4b51-8bac-3e5d2980a955",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.790578",
+        "end_time": "2025-02-04T20:32:33.752919",
+        "death_info": {
+          "reason": "wall",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "2de19619-e53e-49d9-9af0-9428137b529f",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:15.168954",
+        "end_time": "2025-02-04T20:32:45.016867",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 10
+        }
+      },
+      {
+        "game_id": "afa0e8d2-c90f-4f09-b951-4021d565229a",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.306512",
+        "end_time": "2025-02-04T20:32:56.039266",
+        "death_info": {
+          "reason": "wall",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "52a486fe-eff1-4730-9abc-e907a8d65d6a",
+        "my_score": 2,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.170332",
+        "end_time": "2025-02-04T20:33:05.563599",
+        "death_info": {
+          "reason": "wall",
+          "round": 13
+        }
+      },
+      {
+        "game_id": "2cdb8d2e-c326-4e6a-95bf-4a69b0057cb7",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.056334",
+        "end_time": "2025-02-04T20:34:39.492632",
+        "death_info": {
+          "reason": "wall",
+          "round": 12
+        }
+      }
+    ]
+  },
+  "claude-3-5-sonnet-20241022": {
+    "wins": 11,
+    "losses": 9,
+    "ties": 2,
+    "apples_eaten": 55,
+    "elo": 1522.1450857670095,
+    "games": [
+      {
+        "game_id": "c8e026e2-44a4-4431-b744-87900b2d85e1",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.364968",
+        "end_time": "2025-02-04T20:08:03.909075"
+      },
+      {
+        "game_id": "5657c93d-ed68-4816-9aea-5f1797ff8dc5",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.386802",
+        "end_time": "2025-02-04T20:08:47.903790",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "c8c4fe34-7c5d-42fc-88ca-4fb2057c76b8",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.595853",
+        "end_time": "2025-02-04T20:08:51.190566"
+      },
+      {
+        "game_id": "0dbd3a1c-c9db-41f2-860c-9fb1f0aaab31",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.254572",
+        "end_time": "2025-02-04T20:10:34.589022",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "d44ace05-ac89-4c7a-a5c9-65b44a476785",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.034398",
+        "end_time": "2025-02-04T20:10:35.132739",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 9
+        }
+      },
+      {
+        "game_id": "5a85e2f6-bc3b-48ea-81e8-c5f9f5fc97a2",
+        "my_score": 4,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.642551",
+        "end_time": "2025-02-04T20:10:45.566126"
+      },
+      {
+        "game_id": "344aa63d-9fa5-4798-886a-25f438c44bc8",
+        "my_score": 5,
+        "opponent_score": 4,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.244747",
+        "end_time": "2025-02-04T20:11:18.142210",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 14
+        }
+      },
+      {
+        "game_id": "4935af6f-2050-4c3f-8c73-c4938e99d0d7",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.832863",
+        "end_time": "2025-02-04T20:11:20.936492"
+      },
+      {
+        "game_id": "d5d975f3-d797-4ae3-a605-8baec95a6c90",
+        "my_score": 4,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.378731",
+        "end_time": "2025-02-04T20:11:22.501935",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 12
+        }
+      },
+      {
+        "game_id": "5c276282-9d07-41af-a132-ce7ab3a6df01",
+        "my_score": 2,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.279320",
+        "end_time": "2025-02-04T20:12:02.650167",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "68c230b4-2ef1-49b6-abab-f0b60b79b85d",
+        "my_score": 6,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.295528",
+        "end_time": "2025-02-04T20:12:52.095667"
+      },
+      {
+        "game_id": "7205b67f-8e29-49e8-9df1-1eaa7b9a6283",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.413718",
+        "end_time": "2025-02-04T20:31:21.786366"
+      },
+      {
+        "game_id": "ca6b0ce6-b7d4-4623-9ffb-46172d52b323",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.188216",
+        "end_time": "2025-02-04T20:31:48.739759"
+      },
+      {
+        "game_id": "b22a6e4a-17a9-4439-aa0c-714b2a5f5ee5",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.897600",
+        "end_time": "2025-02-04T20:32:32.486951",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "230c6835-187e-4047-a8ae-75729687f5e8",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.465424",
+        "end_time": "2025-02-04T20:32:45.634219"
+      },
+      {
+        "game_id": "52a486fe-eff1-4730-9abc-e907a8d65d6a",
+        "my_score": 3,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.170332",
+        "end_time": "2025-02-04T20:33:05.563599"
+      },
+      {
+        "game_id": "b75357d4-784b-44b9-98ce-1cba8fd8de70",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.908752",
+        "end_time": "2025-02-04T20:33:19.456565"
+      },
+      {
+        "game_id": "06d5f79f-66a6-4199-a64c-c966fbd8aec2",
+        "my_score": 3,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.454021",
+        "end_time": "2025-02-04T20:33:32.014982",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 9
+        }
+      },
+      {
+        "game_id": "3e126d53-896b-4317-a7f3-d65798abf732",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.979047",
+        "end_time": "2025-02-04T20:34:22.632809",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "01a3c8f3-10f6-43a9-872c-0db93397fd97",
+        "my_score": 4,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.105432",
+        "end_time": "2025-02-04T20:34:32.609961"
+      },
+      {
+        "game_id": "3f05638e-9989-4cc3-977e-c0bc809ea8a1",
+        "my_score": 8,
+        "opponent_score": 3,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.980433",
+        "end_time": "2025-02-04T20:36:34.444196",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 18
+        }
+      },
+      {
+        "game_id": "5441c906-af88-4264-88c1-e1552f8b7c73",
+        "my_score": 4,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.135102",
+        "end_time": "2025-02-04T20:39:03.973915",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 20
+        }
+      }
+    ]
+  },
+  "gpt-4-turbo-2024-04-09": {
+    "wins": 8,
+    "losses": 9,
+    "ties": 5,
+    "apples_eaten": 32,
+    "elo": 1504.6644483717378,
+    "games": [
+      {
+        "game_id": "baaa7b6f-cbe7-4b9d-b4f7-f18246ccb3f8",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.049042",
+        "end_time": "2025-02-04T20:08:03.939808"
+      },
+      {
+        "game_id": "b5fe79c8-cad2-48f5-98f3-f7560d340d34",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.852524",
+        "end_time": "2025-02-04T20:08:16.434577",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "6c721e76-6c13-4b5e-8425-66a43c41fea5",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.086078",
+        "end_time": "2025-02-04T20:08:29.744016",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "d4914e22-0f66-46ee-97ac-f6404edf8ca8",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.721477",
+        "end_time": "2025-02-04T20:08:33.382540",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "13ea391d-a609-44da-878f-51f993bc3d9a",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.442646",
+        "end_time": "2025-02-04T20:09:04.860806"
+      },
+      {
+        "game_id": "0e4c7497-608a-4631-9eb9-9b21d2a3fc4b",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.063571",
+        "end_time": "2025-02-04T20:09:33.585100",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "541cbc77-1d02-492d-b510-5cf266fad03c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.202823",
+        "end_time": "2025-02-04T20:10:10.408487",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "0fde9745-0af6-4ff3-b905-cb9ea541db9c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.548871",
+        "end_time": "2025-02-04T20:10:12.262296",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "d5d975f3-d797-4ae3-a605-8baec95a6c90",
+        "my_score": 1,
+        "opponent_score": 4,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.378731",
+        "end_time": "2025-02-04T20:11:22.501935"
+      },
+      {
+        "game_id": "6bad9fae-883c-4db8-83bd-b4cfd9e243a0",
+        "my_score": 5,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.093528",
+        "end_time": "2025-02-04T20:16:06.662199",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 25
+        }
+      },
+      {
+        "game_id": "681aebc9-930a-4385-87a7-d408d6616f3f",
+        "my_score": 2,
+        "opponent_score": 8,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.926630",
+        "end_time": "2025-02-04T20:16:11.171667",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 22
+        }
+      },
+      {
+        "game_id": "c195e3ed-92da-4eef-987d-33a324c3ef7c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.288173",
+        "end_time": "2025-02-04T20:32:17.805010",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "63b641c5-3c38-484c-a80e-04657036b9ab",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.262783",
+        "end_time": "2025-02-04T20:32:19.642448",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "24a0cc6b-deb8-45f1-ba2f-2a1617123406",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.111994",
+        "end_time": "2025-02-04T20:32:32.626412",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "14fa771e-0355-4a32-9c5e-ddd9207f28b9",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.058923",
+        "end_time": "2025-02-04T20:32:33.494725"
+      },
+      {
+        "game_id": "230c6835-187e-4047-a8ae-75729687f5e8",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.465424",
+        "end_time": "2025-02-04T20:32:45.634219",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "afa0e8d2-c90f-4f09-b951-4021d565229a",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.306512",
+        "end_time": "2025-02-04T20:32:56.039266"
+      },
+      {
+        "game_id": "67355f5f-9160-4528-b700-73e476656395",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.341265",
+        "end_time": "2025-02-04T20:33:22.506963",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "32865893-de3c-4695-8467-1418c995b458",
+        "my_score": 2,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.838003",
+        "end_time": "2025-02-04T20:33:52.753732"
+      },
+      {
+        "game_id": "9bb93f9a-6692-4ee8-b109-92899f4eed49",
+        "my_score": 3,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.211850",
+        "end_time": "2025-02-04T20:33:59.648279",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "f27453a1-35ef-4fde-97ad-5a47d9e1d793",
+        "my_score": 1,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.932921",
+        "end_time": "2025-02-04T20:34:54.754435"
+      },
+      {
+        "game_id": "eadb7acc-6d01-4801-9f53-0e6c59b4937d",
+        "my_score": 2,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.500358",
+        "end_time": "2025-02-04T20:35:08.364723"
+      }
+    ]
+  },
+  "gpt-4-0613": {
+    "wins": 8,
+    "losses": 11,
+    "ties": 3,
+    "apples_eaten": 20,
+    "elo": 1438.5901441985386,
+    "games": [
+      {
+        "game_id": "b40e8722-b20f-4026-9ebe-0248f706619d",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.757908",
+        "end_time": "2025-02-04T20:08:06.240584"
+      },
+      {
+        "game_id": "25dd72f1-7a7d-4d4c-bd91-a25549a55d54",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.829121",
+        "end_time": "2025-02-04T20:08:28.588141",
+        "death_info": {
+          "reason": "wall",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "415db078-c3c6-4f63-ba6b-ef2b0a10e780",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.693310",
+        "end_time": "2025-02-04T20:08:33.591053"
+      },
+      {
+        "game_id": "d502a896-cb45-480b-9c7a-1a87b689ff9e",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.216351",
+        "end_time": "2025-02-04T20:08:34.819632"
+      },
+      {
+        "game_id": "332e3aac-28e9-494f-9af9-08a164422f22",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.418687",
+        "end_time": "2025-02-04T20:08:41.635504",
+        "death_info": {
+          "reason": "wall",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "501cd331-8db5-4e28-8b3e-82108d93982a",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.477840",
+        "end_time": "2025-02-04T20:09:16.662483"
+      },
+      {
+        "game_id": "ea592cd3-8b5b-4a80-87c5-e18ec809418f",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.373391",
+        "end_time": "2025-02-04T20:09:20.581045"
+      },
+      {
+        "game_id": "dfea1ee2-2322-4d16-b04e-a0e8589dac0a",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.939914",
+        "end_time": "2025-02-04T20:09:25.350157",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "541cbc77-1d02-492d-b510-5cf266fad03c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.202823",
+        "end_time": "2025-02-04T20:10:10.408487",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "bc28989e-bd01-433b-bcf8-72ecbecb838a",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.908456",
+        "end_time": "2025-02-04T20:10:41.615049"
+      },
+      {
+        "game_id": "5a85e2f6-bc3b-48ea-81e8-c5f9f5fc97a2",
+        "my_score": 1,
+        "opponent_score": 4,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.642551",
+        "end_time": "2025-02-04T20:10:45.566126",
+        "death_info": {
+          "reason": "wall",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "068e982a-fe82-43d1-a259-d4a9f56a26d7",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.647063",
+        "end_time": "2025-02-04T20:31:32.461219",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "673e4544-bcee-487a-b86e-a0a58043c9c0",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.943254",
+        "end_time": "2025-02-04T20:31:45.378576"
+      },
+      {
+        "game_id": "a5ca39be-d125-45f7-8995-382f7c28c937",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.766338",
+        "end_time": "2025-02-04T20:31:46.113826",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "5ef9ca1d-f8ba-4084-baa8-528b622a0868",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.919437",
+        "end_time": "2025-02-04T20:32:19.994559",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "c415abfe-3edb-4b51-8bac-3e5d2980a955",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.790578",
+        "end_time": "2025-02-04T20:32:33.752919"
+      },
+      {
+        "game_id": "b75357d4-784b-44b9-98ce-1cba8fd8de70",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.908752",
+        "end_time": "2025-02-04T20:33:19.456565",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "02fe76bd-172b-4780-9050-bf330c7fcf87",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.680035",
+        "end_time": "2025-02-04T20:33:31.646656",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "6d3b9aeb-ea8a-440d-aa3f-063d2c02a037",
+        "my_score": 3,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.607999",
+        "end_time": "2025-02-04T20:33:34.980890",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 9
+        }
+      },
+      {
+        "game_id": "32865893-de3c-4695-8467-1418c995b458",
+        "my_score": 2,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.838003",
+        "end_time": "2025-02-04T20:33:52.753732",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 8
+        }
+      },
+      {
+        "game_id": "d0defa82-91a4-4665-b2eb-0af71b6beaec",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.741618",
+        "end_time": "2025-02-04T20:34:07.248038",
+        "death_info": {
+          "reason": "wall",
+          "round": 10
+        }
+      },
+      {
+        "game_id": "6120b59d-cdea-4157-a517-54a8cafe8a7c",
+        "my_score": 4,
+        "opponent_score": 6,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.859400",
+        "end_time": "2025-02-04T20:37:21.528842",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 18
+        }
+      }
+    ]
+  },
+  "claude-3-sonnet-20240229": {
+    "wins": 8,
+    "losses": 10,
+    "ties": 4,
+    "apples_eaten": 15,
+    "elo": 1489.520654876302,
+    "games": [
+      {
+        "game_id": "96b2dadf-8cdb-41cd-8b07-b89d7320c09b",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.221265",
+        "end_time": "2025-02-04T20:08:08.880771"
+      },
+      {
+        "game_id": "b5fe79c8-cad2-48f5-98f3-f7560d340d34",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.852524",
+        "end_time": "2025-02-04T20:08:16.434577"
+      },
+      {
+        "game_id": "39d73908-5e5f-456d-ad6d-1b86bbb64c57",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.371326",
+        "end_time": "2025-02-04T20:08:16.793600",
+        "death_info": {
+          "reason": "wall",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "13ec633a-7177-4a1b-8a88-c53103679de4",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.769179",
+        "end_time": "2025-02-04T20:08:40.018746",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "94b10bcf-83cd-4300-9ac3-f83c0882b302",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.270543",
+        "end_time": "2025-02-04T20:08:51.255299",
+        "death_info": {
+          "reason": "wall",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "23bc67be-9d27-47c0-8b47-42f85332a519",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.801260",
+        "end_time": "2025-02-04T20:08:55.969641",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "501cd331-8db5-4e28-8b3e-82108d93982a",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.477840",
+        "end_time": "2025-02-04T20:09:16.662483",
+        "death_info": {
+          "reason": "wall",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "de677b94-eafa-4157-8da3-23f4e3f95005",
+        "my_score": 1,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.132296",
+        "end_time": "2025-02-04T20:10:04.611427",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "1cda0ede-9d6c-46cf-9d5b-fe28eed3e314",
+        "my_score": 3,
+        "opponent_score": 4,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.090029",
+        "end_time": "2025-02-04T20:11:02.464907",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "14677d1e-41e9-4b87-8059-a477eb57167d",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.324782",
+        "end_time": "2025-02-04T20:11:22.991411"
+      },
+      {
+        "game_id": "68c230b4-2ef1-49b6-abab-f0b60b79b85d",
+        "my_score": 2,
+        "opponent_score": 6,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.295528",
+        "end_time": "2025-02-04T20:12:52.095667",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 25
+        }
+      },
+      {
+        "game_id": "a5ca39be-d125-45f7-8995-382f7c28c937",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.766338",
+        "end_time": "2025-02-04T20:31:46.113826"
+      },
+      {
+        "game_id": "76ddb5c9-4096-4e7c-8f22-52c2ea10ae93",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.956585",
+        "end_time": "2025-02-04T20:31:48.405323"
+      },
+      {
+        "game_id": "8b5f5fed-1875-4a38-a71d-86e7984a1977",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.609875",
+        "end_time": "2025-02-04T20:31:49.390099",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "15f63633-0cfa-44e8-a860-233fc2933cff",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.450560",
+        "end_time": "2025-02-04T20:31:52.305916"
+      },
+      {
+        "game_id": "58830ba3-6c2e-4df5-81a9-2dbec9340037",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:15.099512",
+        "end_time": "2025-02-04T20:31:54.816656",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "6f02e9cc-b3e3-457f-9a12-c5b13b700c3c",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.133462",
+        "end_time": "2025-02-04T20:32:06.948005"
+      },
+      {
+        "game_id": "2f4e2e77-4a45-438b-9ebd-52993aaa76b0",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.565965",
+        "end_time": "2025-02-04T20:32:13.541098",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "24a0cc6b-deb8-45f1-ba2f-2a1617123406",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:13.111994",
+        "end_time": "2025-02-04T20:32:32.626412",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "bc418229-0770-4259-a268-bf91f880ebc7",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.045158",
+        "end_time": "2025-02-04T20:32:45.082292"
+      },
+      {
+        "game_id": "4b824d47-4134-4e48-a3d3-de59ddf15ed3",
+        "my_score": 2,
+        "opponent_score": 4,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:14.719602",
+        "end_time": "2025-02-04T20:34:01.105789",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "01a3c8f3-10f6-43a9-872c-0db93397fd97",
+        "my_score": 0,
+        "opponent_score": 4,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.105432",
+        "end_time": "2025-02-04T20:34:32.609961",
+        "death_info": {
+          "reason": "wall",
+          "round": 17
+        }
+      }
+    ]
+  },
+  "claude-3-opus-20240229": {
+    "wins": 10,
+    "losses": 11,
+    "ties": 1,
+    "apples_eaten": 20,
+    "elo": 1500.4815813056655,
+    "games": [
+      {
+        "game_id": "8c6ae7e5-31ec-419d-960c-07ac3b3227e6",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.225481",
+        "end_time": "2025-02-04T20:08:10.030338",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "6c721e76-6c13-4b5e-8425-66a43c41fea5",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.086078",
+        "end_time": "2025-02-04T20:08:29.744016"
+      },
+      {
+        "game_id": "226597a6-5097-46b3-b90f-338750e96382",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.346382",
+        "end_time": "2025-02-04T20:08:39.361347",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "a463ff62-6892-4fb9-a57e-1466d17c683e",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.086656",
+        "end_time": "2025-02-04T20:08:47.819464",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "94b10bcf-83cd-4300-9ac3-f83c0882b302",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.270543",
+        "end_time": "2025-02-04T20:08:51.255299"
+      },
+      {
+        "game_id": "1a7e9927-6e83-4a44-baa9-8bc734a527c6",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "o3-mini",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.950366",
+        "end_time": "2025-02-04T20:08:55.701895"
+      },
+      {
+        "game_id": "e79abb1f-c613-420f-b51c-ad5155a629ad",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.841761",
+        "end_time": "2025-02-04T20:09:48.090907",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "267b64c6-b0e4-4a25-ad9d-16783cadb6df",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.258331",
+        "end_time": "2025-02-04T20:10:23.650647"
+      },
+      {
+        "game_id": "bc28989e-bd01-433b-bcf8-72ecbecb838a",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.908456",
+        "end_time": "2025-02-04T20:10:41.615049",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "5c276282-9d07-41af-a132-ce7ab3a6df01",
+        "my_score": 2,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:57.279320",
+        "end_time": "2025-02-04T20:12:02.650167"
+      },
+      {
+        "game_id": "8295e736-58f0-4f4e-9f03-da86f9b0f20f",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.639295",
+        "end_time": "2025-02-04T20:15:01.888557",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 13
+        }
+      },
+      {
+        "game_id": "f7efbe2c-9657-4798-81d8-6af5ddec682b",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.132307",
+        "end_time": "2025-02-04T20:31:42.032762",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "673e4544-bcee-487a-b86e-a0a58043c9c0",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:13.943254",
+        "end_time": "2025-02-04T20:31:45.378576",
+        "death_info": {
+          "reason": "wall",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "4333fcdf-f978-44d1-8cfa-0f4b66bd6d37",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.929505",
+        "end_time": "2025-02-04T20:32:06.932239",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "f3062213-32ce-45d6-a127-89e1c18ea62e",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.498247",
+        "end_time": "2025-02-04T20:32:17.900312"
+      },
+      {
+        "game_id": "f2bba444-c043-41e1-b882-3c5e3135984a",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.188877",
+        "end_time": "2025-02-04T20:32:44.099934"
+      },
+      {
+        "game_id": "bc418229-0770-4259-a268-bf91f880ebc7",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.045158",
+        "end_time": "2025-02-04T20:32:45.082292",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "e98020c9-7f3f-4b75-b9ee-3c833dab13bb",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.637959",
+        "end_time": "2025-02-04T20:33:25.588730",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "0cee9ebd-b83a-45d2-889e-5f062ba8ba2c",
+        "my_score": 3,
+        "opponent_score": 1,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.346088",
+        "end_time": "2025-02-04T20:33:50.044636",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "9bb93f9a-6692-4ee8-b109-92899f4eed49",
+        "my_score": 1,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.211850",
+        "end_time": "2025-02-04T20:33:59.648279"
+      },
+      {
+        "game_id": "2cdb8d2e-c326-4e6a-95bf-4a69b0057cb7",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.056334",
+        "end_time": "2025-02-04T20:34:39.492632"
+      },
+      {
+        "game_id": "5441c906-af88-4264-88c1-e1552f8b7c73",
+        "my_score": 0,
+        "opponent_score": 4,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.135102",
+        "end_time": "2025-02-04T20:39:03.973915"
+      }
+    ]
+  },
+  "gpt-4o-mini-2024-07-18": {
+    "wins": 12,
+    "losses": 8,
+    "ties": 2,
+    "apples_eaten": 28,
+    "elo": 1537.4355915411415,
+    "games": [
+      {
+        "game_id": "744fa4d0-e259-4c20-9de6-62d11a191952",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.026268",
+        "end_time": "2025-02-04T20:08:26.437463"
+      },
+      {
+        "game_id": "415db078-c3c6-4f63-ba6b-ef2b0a10e780",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.693310",
+        "end_time": "2025-02-04T20:08:33.591053",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "4c398acc-acae-4331-9618-fd70b9553d20",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.633516",
+        "end_time": "2025-02-04T20:08:42.057764"
+      },
+      {
+        "game_id": "a463ff62-6892-4fb9-a57e-1466d17c683e",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.086656",
+        "end_time": "2025-02-04T20:08:47.819464"
+      },
+      {
+        "game_id": "26f0c199-1bfd-479d-a5e3-94988fe11670",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.774472",
+        "end_time": "2025-02-04T20:08:53.675221"
+      },
+      {
+        "game_id": "331c4028-3476-44c4-930b-ff52640ccf52",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.587135",
+        "end_time": "2025-02-04T20:09:14.336562",
+        "death_info": {
+          "reason": "wall",
+          "round": 5
+        }
+      },
+      {
+        "game_id": "de677b94-eafa-4157-8da3-23f4e3f95005",
+        "my_score": 3,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.132296",
+        "end_time": "2025-02-04T20:10:04.611427"
+      },
+      {
+        "game_id": "344aa63d-9fa5-4798-886a-25f438c44bc8",
+        "my_score": 4,
+        "opponent_score": 5,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.244747",
+        "end_time": "2025-02-04T20:11:18.142210"
+      },
+      {
+        "game_id": "737fbef6-2805-46dd-8a48-5ad3d1047b5c",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.202589",
+        "end_time": "2025-02-04T20:12:22.493887",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 11
+        }
+      },
+      {
+        "game_id": "2aa0d8e3-6c59-4bd4-a892-65e2626b2e90",
+        "my_score": 2,
+        "opponent_score": 4,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:53.978059",
+        "end_time": "2025-02-04T20:14:24.689770",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 23
+        }
+      },
+      {
+        "game_id": "6bad9fae-883c-4db8-83bd-b4cfd9e243a0",
+        "my_score": 2,
+        "opponent_score": 5,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.093528",
+        "end_time": "2025-02-04T20:16:06.662199"
+      },
+      {
+        "game_id": "69579adf-f799-45d7-9eec-fc8e84cf25eb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.655132",
+        "end_time": "2025-02-04T20:31:21.172295"
+      },
+      {
+        "game_id": "a68c3aac-a179-41cc-95c9-4b7e28852699",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.430047",
+        "end_time": "2025-02-04T20:31:31.687139",
+        "death_info": {
+          "reason": "wall",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "a0ab034e-e2bd-44e3-8b31-6ba3d2c990cb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.466346",
+        "end_time": "2025-02-04T20:31:32.251550",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "0bdb72a4-a421-4255-8dec-560a17a4fcd7",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.535813",
+        "end_time": "2025-02-04T20:31:43.530571",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "2f4e2e77-4a45-438b-9ebd-52993aaa76b0",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.565965",
+        "end_time": "2025-02-04T20:32:13.541098"
+      },
+      {
+        "game_id": "f3062213-32ce-45d6-a127-89e1c18ea62e",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.498247",
+        "end_time": "2025-02-04T20:32:17.900312",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "67355f5f-9160-4528-b700-73e476656395",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.341265",
+        "end_time": "2025-02-04T20:33:22.506963"
+      },
+      {
+        "game_id": "d427e82d-b92a-4c3b-97e6-6a8e9efb479d",
+        "my_score": 2,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.500538",
+        "end_time": "2025-02-04T20:33:29.684091",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 10
+        }
+      },
+      {
+        "game_id": "06d5f79f-66a6-4199-a64c-c966fbd8aec2",
+        "my_score": 0,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.454021",
+        "end_time": "2025-02-04T20:33:32.014982"
+      },
+      {
+        "game_id": "6d3b9aeb-ea8a-440d-aa3f-063d2c02a037",
+        "my_score": 1,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.607999",
+        "end_time": "2025-02-04T20:33:34.980890"
+      },
+      {
+        "game_id": "38d0be5f-744e-4a70-929a-f46baa888069",
+        "my_score": 3,
+        "opponent_score": 6,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.444547",
+        "end_time": "2025-02-04T20:39:18.749030",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 27
+        }
+      }
+    ]
+  },
+  "o1-mini": {
+    "wins": 16,
+    "losses": 2,
+    "ties": 4,
+    "apples_eaten": 37,
+    "elo": 1645.5054293802789,
+    "games": [
+      {
+        "game_id": "25dd72f1-7a7d-4d4c-bd91-a25549a55d54",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.829121",
+        "end_time": "2025-02-04T20:08:28.588141"
+      },
+      {
+        "game_id": "574c9578-d15b-4588-89a1-6b9f23630326",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.891200",
+        "end_time": "2025-02-04T20:08:39.804531"
+      },
+      {
+        "game_id": "13ec633a-7177-4a1b-8a88-c53103679de4",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.769179",
+        "end_time": "2025-02-04T20:08:40.018746"
+      },
+      {
+        "game_id": "48d75aa6-0176-4862-9878-d545555d2639",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.798965",
+        "end_time": "2025-02-04T20:08:40.535679"
+      },
+      {
+        "game_id": "0e4c7497-608a-4631-9eb9-9b21d2a3fc4b",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:55.063571",
+        "end_time": "2025-02-04T20:09:33.585100",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "61dfafd6-0cbb-4343-b8a7-07ae19814d63",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.418636",
+        "end_time": "2025-02-04T20:10:23.336678"
+      },
+      {
+        "game_id": "4935af6f-2050-4c3f-8c73-c4938e99d0d7",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.832863",
+        "end_time": "2025-02-04T20:11:20.936492",
+        "death_info": {
+          "reason": "wall",
+          "round": 9
+        }
+      },
+      {
+        "game_id": "737fbef6-2805-46dd-8a48-5ad3d1047b5c",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.202589",
+        "end_time": "2025-02-04T20:12:22.493887"
+      },
+      {
+        "game_id": "8295e736-58f0-4f4e-9f03-da86f9b0f20f",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.639295",
+        "end_time": "2025-02-04T20:15:01.888557"
+      },
+      {
+        "game_id": "57360b90-386c-4f80-bba1-41da45ae4928",
+        "my_score": 4,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.673286",
+        "end_time": "2025-02-04T20:16:15.354170"
+      },
+      {
+        "game_id": "693e7347-0053-4723-8ebe-f8309177dfc9",
+        "my_score": 12,
+        "opponent_score": 7,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.646968",
+        "end_time": "2025-02-04T20:26:27.080699",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 36
+        }
+      },
+      {
+        "game_id": "b7c7f7d2-f9b1-45a0-bf39-395655c737e8",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.865540",
+        "end_time": "2025-02-04T20:31:26.482034"
+      },
+      {
+        "game_id": "d8641393-6c90-4299-98a2-6a6fa62a8ecb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.453730",
+        "end_time": "2025-02-04T20:31:27.514640"
+      },
+      {
+        "game_id": "a0ab034e-e2bd-44e3-8b31-6ba3d2c990cb",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.466346",
+        "end_time": "2025-02-04T20:31:32.251550",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "6c369c11-d3a4-4f76-8d78-278d8d7915ad",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.901646",
+        "end_time": "2025-02-04T20:31:46.543974"
+      },
+      {
+        "game_id": "8b5f5fed-1875-4a38-a71d-86e7984a1977",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.609875",
+        "end_time": "2025-02-04T20:31:49.390099"
+      },
+      {
+        "game_id": "1a22c094-f798-4403-846f-f169e70b7f28",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:14.277038",
+        "end_time": "2025-02-04T20:32:01.751672",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "c195e3ed-92da-4eef-987d-33a324c3ef7c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.288173",
+        "end_time": "2025-02-04T20:32:17.805010"
+      },
+      {
+        "game_id": "b22a6e4a-17a9-4439-aa0c-714b2a5f5ee5",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.897600",
+        "end_time": "2025-02-04T20:32:32.486951"
+      },
+      {
+        "game_id": "02fe76bd-172b-4780-9050-bf330c7fcf87",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.680035",
+        "end_time": "2025-02-04T20:33:31.646656"
+      },
+      {
+        "game_id": "0cee9ebd-b83a-45d2-889e-5f062ba8ba2c",
+        "my_score": 1,
+        "opponent_score": 3,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.346088",
+        "end_time": "2025-02-04T20:33:50.044636"
+      },
+      {
+        "game_id": "b85e6c92-ac61-4b76-bd89-f9a935e9498b",
+        "my_score": 3,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.724029",
+        "end_time": "2025-02-04T20:34:24.742562",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 6
+        }
+      }
+    ]
+  },
+  "claude-3-5-haiku-20241022": {
+    "wins": 8,
+    "losses": 11,
+    "ties": 3,
+    "apples_eaten": 25,
+    "elo": 1471.8904307473863,
+    "games": [
+      {
+        "game_id": "d4914e22-0f66-46ee-97ac-f6404edf8ca8",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.721477",
+        "end_time": "2025-02-04T20:08:33.382540"
+      },
+      {
+        "game_id": "332e3aac-28e9-494f-9af9-08a164422f22",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.418687",
+        "end_time": "2025-02-04T20:08:41.635504"
+      },
+      {
+        "game_id": "4c398acc-acae-4331-9618-fd70b9553d20",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.633516",
+        "end_time": "2025-02-04T20:08:42.057764",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "ee5ad49e-22c8-4ad9-a3ae-d07866e3b998",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:56.510234",
+        "end_time": "2025-02-04T20:08:47.097751"
+      },
+      {
+        "game_id": "5657c93d-ed68-4816-9aea-5f1797ff8dc5",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.386802",
+        "end_time": "2025-02-04T20:08:47.903790",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "fa3530d3-ecb5-42d1-9030-2d0b3f3e3139",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:57.284700",
+        "end_time": "2025-02-04T20:08:49.780552",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "048f4a98-b2fc-499c-80f2-975c8a1f8e7d",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:55.038791",
+        "end_time": "2025-02-04T20:09:01.940097",
+        "death_info": {
+          "reason": "wall",
+          "round": 3
+        }
+      },
+      {
+        "game_id": "267b64c6-b0e4-4a25-ad9d-16783cadb6df",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.258331",
+        "end_time": "2025-02-04T20:10:23.650647",
+        "death_info": {
+          "reason": "wall",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "14677d1e-41e9-4b87-8059-a477eb57167d",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.324782",
+        "end_time": "2025-02-04T20:11:22.991411",
+        "death_info": {
+          "reason": "wall",
+          "round": 19
+        }
+      },
+      {
+        "game_id": "ddfbf336-0c23-456b-b345-c9599de02ca1",
+        "my_score": 3,
+        "opponent_score": 3,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:57.128696",
+        "end_time": "2025-02-04T20:11:35.658588",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 12
+        }
+      },
+      {
+        "game_id": "57360b90-386c-4f80-bba1-41da45ae4928",
+        "my_score": 2,
+        "opponent_score": 4,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:56.673286",
+        "end_time": "2025-02-04T20:16:15.354170",
+        "death_info": {
+          "reason": "wall",
+          "round": 19
+        }
+      },
+      {
+        "game_id": "8c48f8db-69cf-4879-bbe0-646560353e37",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:14.450267",
+        "end_time": "2025-02-04T20:31:21.034544"
+      },
+      {
+        "game_id": "b7c7f7d2-f9b1-45a0-bf39-395655c737e8",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.865540",
+        "end_time": "2025-02-04T20:31:26.482034",
+        "death_info": {
+          "reason": "wall",
+          "round": 0
+        }
+      },
+      {
+        "game_id": "f7efbe2c-9657-4798-81d8-6af5ddec682b",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:15.132307",
+        "end_time": "2025-02-04T20:31:42.032762"
+      },
+      {
+        "game_id": "ca6b0ce6-b7d4-4623-9ffb-46172d52b323",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.188216",
+        "end_time": "2025-02-04T20:31:48.739759",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "6f02e9cc-b3e3-457f-9a12-c5b13b700c3c",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:15.133462",
+        "end_time": "2025-02-04T20:32:06.948005",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 4
+        }
+      },
+      {
+        "game_id": "5ef9ca1d-f8ba-4084-baa8-528b622a0868",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:13.919437",
+        "end_time": "2025-02-04T20:32:19.994559"
+      },
+      {
+        "game_id": "2de19619-e53e-49d9-9af0-9428137b529f",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:15.168954",
+        "end_time": "2025-02-04T20:32:45.016867",
+        "death_info": {
+          "reason": "wall",
+          "round": 10
+        }
+      },
+      {
+        "game_id": "d427e82d-b92a-4c3b-97e6-6a8e9efb479d",
+        "my_score": 3,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.500538",
+        "end_time": "2025-02-04T20:33:29.684091"
+      },
+      {
+        "game_id": "f27453a1-35ef-4fde-97ad-5a47d9e1d793",
+        "my_score": 3,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.932921",
+        "end_time": "2025-02-04T20:34:54.754435",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 13
+        }
+      },
+      {
+        "game_id": "63a48d48-25f1-4644-ac9b-54914f52a05a",
+        "my_score": 0,
+        "opponent_score": 3,
+        "opponent_model": "gpt-4o-2024-08-06",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.764304",
+        "end_time": "2025-02-04T20:34:58.026411"
+      },
+      {
+        "game_id": "64f01a1b-e4f8-4670-af3b-5a4a4afa78e7",
+        "my_score": 2,
+        "opponent_score": 4,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:14.880519",
+        "end_time": "2025-02-04T20:36:32.590166",
+        "death_info": {
+          "reason": "wall",
+          "round": 19
+        }
+      }
+    ]
+  },
+  "gpt-4o-2024-08-06": {
+    "wins": 11,
+    "losses": 6,
+    "ties": 5,
+    "apples_eaten": 27,
+    "elo": 1536.8394075396561,
+    "games": [
+      {
+        "game_id": "d502a896-cb45-480b-9c7a-1a87b689ff9e",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "gpt-4-0613",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.216351",
+        "end_time": "2025-02-04T20:08:34.819632",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "48d75aa6-0176-4862-9878-d545555d2639",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "o1-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:07:54.798965",
+        "end_time": "2025-02-04T20:08:40.535679",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 1
+        }
+      },
+      {
+        "game_id": "9fdfc943-4505-40bb-98fa-64e7a2941ba7",
+        "my_score": 2,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.828735",
+        "end_time": "2025-02-04T20:08:55.586667",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "23bc67be-9d27-47c0-8b47-42f85332a519",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.801260",
+        "end_time": "2025-02-04T20:08:55.969641"
+      },
+      {
+        "game_id": "048f4a98-b2fc-499c-80f2-975c8a1f8e7d",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.038791",
+        "end_time": "2025-02-04T20:09:01.940097"
+      },
+      {
+        "game_id": "331c4028-3476-44c4-930b-ff52640ccf52",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.587135",
+        "end_time": "2025-02-04T20:09:14.336562"
+      },
+      {
+        "game_id": "e79abb1f-c613-420f-b51c-ad5155a629ad",
+        "my_score": 1,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:54.841761",
+        "end_time": "2025-02-04T20:09:48.090907"
+      },
+      {
+        "game_id": "0fde9745-0af6-4ff3-b905-cb9ea541db9c",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.548871",
+        "end_time": "2025-02-04T20:10:12.262296",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 7
+        }
+      },
+      {
+        "game_id": "0dbd3a1c-c9db-41f2-860c-9fb1f0aaab31",
+        "my_score": 2,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.254572",
+        "end_time": "2025-02-04T20:10:34.589022"
+      },
+      {
+        "game_id": "ad3c75a9-4bb9-4f53-aa41-a06cdae0ce4a",
+        "my_score": 3,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:07:55.143201",
+        "end_time": "2025-02-04T20:10:41.586286"
+      },
+      {
+        "game_id": "239ee075-b35a-4727-86c5-a6053f2a5e5f",
+        "my_score": 6,
+        "opponent_score": 4,
+        "opponent_model": "o3-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:07:54.684096",
+        "end_time": "2025-02-04T20:12:57.259048",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 15
+        }
+      },
+      {
+        "game_id": "a3c5282a-281b-42d7-8f4b-f51389a1cda1",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-haiku-20240307",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.852674",
+        "end_time": "2025-02-04T20:31:35.949802"
+      },
+      {
+        "game_id": "0bdb72a4-a421-4255-8dec-560a17a4fcd7",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4o-mini-2024-07-18",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.535813",
+        "end_time": "2025-02-04T20:31:43.530571"
+      },
+      {
+        "game_id": "76ddb5c9-4096-4e7c-8f22-52c2ea10ae93",
+        "my_score": 1,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-sonnet-20240229",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.956585",
+        "end_time": "2025-02-04T20:31:48.405323",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 2
+        }
+      },
+      {
+        "game_id": "f0a43fef-d681-43d8-a251-d2f26538afa6",
+        "my_score": 0,
+        "opponent_score": 0,
+        "opponent_model": "gpt-3.5-turbo-0125",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.331880",
+        "end_time": "2025-02-04T20:31:58.036856"
+      },
+      {
+        "game_id": "e98020c9-7f3f-4b75-b9ee-3c833dab13bb",
+        "my_score": 0,
+        "opponent_score": 2,
+        "opponent_model": "claude-3-opus-20240229",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.637959",
+        "end_time": "2025-02-04T20:33:25.588730"
+      },
+      {
+        "game_id": "d0defa82-91a4-4665-b2eb-0af71b6beaec",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "gpt-4-0613",
+        "result": "won",
+        "start_time": "2025-02-04T20:31:12.741618",
+        "end_time": "2025-02-04T20:34:07.248038"
+      },
+      {
+        "game_id": "3e126d53-896b-4317-a7f3-d65798abf732",
+        "my_score": 0,
+        "opponent_score": 1,
+        "opponent_model": "claude-3-5-sonnet-20241022",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.979047",
+        "end_time": "2025-02-04T20:34:22.632809",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "b85e6c92-ac61-4b76-bd89-f9a935e9498b",
+        "my_score": 0,
+        "opponent_score": 3,
+        "opponent_model": "o1-mini",
+        "result": "tied",
+        "start_time": "2025-02-04T20:31:12.724029",
+        "end_time": "2025-02-04T20:34:24.742562",
+        "death_info": {
+          "reason": "head_collision",
+          "round": 6
+        }
+      },
+      {
+        "game_id": "def638ce-86ac-4a35-980b-7944b172a480",
+        "my_score": 1,
+        "opponent_score": 1,
+        "opponent_model": "o3-mini",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.604467",
+        "end_time": "2025-02-04T20:34:48.366680",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 10
+        }
+      },
+      {
+        "game_id": "63a48d48-25f1-4644-ac9b-54914f52a05a",
+        "my_score": 3,
+        "opponent_score": 0,
+        "opponent_model": "claude-3-5-haiku-20241022",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.764304",
+        "end_time": "2025-02-04T20:34:58.026411",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 14
+        }
+      },
+      {
+        "game_id": "eadb7acc-6d01-4801-9f53-0e6c59b4937d",
+        "my_score": 3,
+        "opponent_score": 2,
+        "opponent_model": "gpt-4-turbo-2024-04-09",
+        "result": "lost",
+        "start_time": "2025-02-04T20:31:12.500358",
+        "end_time": "2025-02-04T20:35:08.364723",
+        "death_info": {
+          "reason": "body_collision",
+          "round": 10
+        }
+      }
+    ]
+  }
+}

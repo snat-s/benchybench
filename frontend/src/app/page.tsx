@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 import AnimatedTitle from '@/components/AnimatedTitle'
 import AsciiSnakeGame from '@/components/AsciiSnakePlayer';
 import Leaderboard from '@/components/Leaderboard'
@@ -36,18 +38,9 @@ type GameData = {
 };
 
 export default async function Page() {
-  // Use the BASE_URL environment variable to build an absolute URL.
-  const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL}`;
-  console.log("DEBUG: Computed baseUrl:", baseUrl); // Log it!
-
-  if (!baseUrl) {
-    throw new Error("BASE_URL is not defined. Please set it in your environment variables.");
-  }
-
   let aggregatedData: Record<string, StatsData> = {};
   try {
-    const response = await fetch(`${baseUrl}/api/stats`, { next: { revalidate: 300 } });
-    console.log("DEBUG: Response:", response);
+    const response = await fetch(`${process.env.FLASK_URL}/api/stats`, { next: { revalidate: 300 } });
     const data = await response.json();
     aggregatedData = data.aggregatedData;
   } catch (error) {
@@ -73,7 +66,7 @@ export default async function Page() {
 
   let games: GameData[] = [];
   try {
-    const gamesResponse = await fetch(`${baseUrl}/api/games?limit=16`, { next: { revalidate: 300 } });
+    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=16`, { next: { revalidate: 300 } });
     const gamesData = await gamesResponse.json();
     games = gamesData.games;
   } catch (error) {
