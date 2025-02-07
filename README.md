@@ -43,7 +43,7 @@ The included instructions allow you to generate model pairs, simulate games, run
 2. **Run a Single Game:**
 
    ```bash
-   python main.py --model_pairs model_pairs.txt --num_rounds 100
+   python3 main.py --model1 gpt-4o --model2 gemini-2.0-flash-001
    ```
 
 3. **Run Many Games in Parallel:**

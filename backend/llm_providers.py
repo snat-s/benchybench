@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI
 import anthropic
+import google.generativeai as genai  # Add this import
 
 class LLMProviderInterface:
     """
@@ -17,7 +18,8 @@ class OpenAIProvider(LLMProviderInterface):
     def get_response(self, model: str, prompt: str) -> str:
         response = self.client.chat.completions.create(
             model=model,
-            messages=[{"role": "user", "content": prompt}]
+            messages=[{"role": "user", "content": prompt}],
+            max_completion_tokens=4096
         )
         return response.choices[0].message.content.strip()
 
@@ -30,10 +32,26 @@ class AnthropicProvider(LLMProviderInterface):
         # According to Anthropic docs, this is one way to call the API.
         response = self.client.messages.create(
             model=model,
-            max_tokens=1024,
+            max_tokens=4096,
             messages=[{"role": "user", "content": prompt}]
         )
         return response.content[0].text.strip()
+    
+class GeminiProvider(LLMProviderInterface):
+    def __init__(self, api_key: str):
+        genai.configure(api_key=api_key)
+        
+    def get_response(self, model: str, prompt: str) -> str:
+        model = genai.GenerativeModel(model)
+        response = model.generate_content(
+            contents=[{"parts": [prompt], "role": "user"}],
+            generation_config={
+                "max_output_tokens": 4096,
+                "temperature": 0.0
+            },
+            stream=False
+        )
+        return response.text.strip()
 
 def create_llm_provider(model: str) -> LLMProviderInterface:
     """
@@ -46,6 +64,7 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     model_lower = model.lower()
     openai_substrings = ["gpt-", "o1-", "o3-"]         # Add more OpenAI identifying substrings to this list if needed.
     anthropic_substrings = ["claude"]     # Add more Anthropic identifying substrings to this list if needed.
+    gemini_substrings = ["gemini"]
 
     if any(substr in model_lower for substr in openai_substrings):
         if not os.getenv("OPENAI_API_KEY"):
@@ -55,5 +74,9 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
         if not os.getenv("ANTHROPIC_API_KEY"):
             raise ValueError("ANTHROPIC_API_KEY is not set in the environment variables.")
         return AnthropicProvider(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    elif any(substr in model_lower for substr in gemini_substrings):  # Add this block
+        if not os.getenv("GOOGLE_API_KEY"):
+            raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+        return GeminiProvider(api_key=os.getenv("GOOGLE_API_KEY"))
     else:
         raise ValueError(f"Unsupported model: {model}")

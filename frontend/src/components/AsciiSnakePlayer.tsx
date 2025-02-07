@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, JSX } from 'react'
 
 interface GameRound {
   round_number: number;
@@ -54,46 +54,68 @@ export default function AsciiSnakeGame({ initialGameData }: AsciiSnakeGameProps)
   // Build an ASCII representation of the current round's board.
   const renderBoardAscii = (round: GameRound) => {
     const { width, height, apples, snake_positions, alive } = round
-    // Initialize a board filled with periods.
-    const board: string[][] = Array.from({ length: height }, () =>
-      Array.from({ length: width }, () => '.')
+    // Initialize a board filled with periods, but now with objects containing char and class
+    const board: Array<Array<{char: string, class?: string}>> = Array.from({ length: height }, () =>
+      Array.from({ length: width }, () => ({char: '.'}))
     )
 
     // Place the apples
     apples.forEach(([ax, ay]) => {
       if (ay >= 0 && ay < height && ax >= 0 && ax < width)
-        board[ay][ax] = 'A'
+        board[ay][ax] = {char: 'A', class: 'bg-yellow-200 text-black'} // Yellow background
     })
 
-    // Place the snakes – sort keys so that "1" comes before "2" (so numbering is consistent)
+    // Place the snakes
     const snakeIds = Object.keys(snake_positions).sort()
     snakeIds.forEach((snakeId, index) => {
-      // Only show the snake if it is still alive in this round.
       if (!alive[snakeId]) return
       const positions = snake_positions[snakeId]
+      const snakeClass = snakeId === '1' ? 'bg-green-200 text-black' : 'bg-red-200 text-black'
       positions.forEach((pos, posIndex) => {
         const [x, y] = pos
         if (x >= 0 && x < width && y >= 0 && y < height) {
-          // Head is marked by the snake index (starting at 1); all other parts as "T"
-          board[y][x] = posIndex === 0 ? (index + 1).toString() : 'T'
+          board[y][x] = {
+            char: posIndex === 0 ? (index + 1).toString() : 'T',
+            class: snakeClass
+          }
         }
       })
     })
 
-    // Build the string: rows from top (height - 1) to bottom (0)
-    let boardStr = ''
+    // Build the string with spans for colored characters
+    let boardJsx: JSX.Element[] = []
     for (let y = height - 1; y >= 0; y--) {
-      // Row number padded to 2 characters (as in Python f"{y:2d}")
-      boardStr += y.toString().padStart(2, ' ') + ' ' + board[y].join(' ') + '\n'
+      // Row number (uncolored)
+      boardJsx.push(<span key={`row-${y}`}>{y.toString().padStart(2, ' ') + ' '}</span>)
+      // Board cells
+      board[y].forEach((cell, x) => {
+        boardJsx.push(
+          <span key={`${y}-${x}`} className={cell.class}>
+            {cell.char + ' '}
+          </span>
+        )
+      })
+      boardJsx.push(<br key={`br-${y}`} />)
     }
-    // Add x-axis labels
-    boardStr += '   ' + Array.from({ length: width }, (_, i) => i.toString()).join(' ') + '\n'
-    return boardStr
+    // Add x-axis labels (uncolored)
+    boardJsx.push(
+      <span key="x-axis">
+        {'   ' + Array.from({ length: width }, (_, i) => i.toString()).join(' ') + '\n'}
+      </span>
+    )
+    return boardJsx
   }
 
-  const boardAscii = renderBoardAscii(currentRound)
+  const boardJsx = renderBoardAscii(currentRound)
   const models = gameData.metadata.models
-  const titleAscii = `${models['1']} (1) vs ${models['2']} (2)`
+  const titleAscii = (
+    <>
+      <span className="bg-green-200 text-black text-xs">{models['1']}</span>
+      {' (1) vs '}
+      <span className="bg-red-200 text-black text-xs">{models['2']}</span>
+      {' (2)'}
+    </>
+  )
 
   return (
       <div className="font-mono border border-gray-200 p-6 hover:shadow-lg transition-shadow inline-block min-w-fit">
@@ -103,7 +125,7 @@ export default function AsciiSnakeGame({ initialGameData }: AsciiSnakeGameProps)
         </div>
         {/* ASCII Board */}
         <div className="whitespace-pre text-[11px] leading-[1.15] text-center">
-          {boardAscii}
+          {boardJsx}
         </div>
         <hr className="my-4" />
         {/* Link to match */}
