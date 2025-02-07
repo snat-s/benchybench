@@ -79,7 +79,7 @@ export default function AsciiSnakePlayer({
     });
 
     // Build the string with spans for colored characters
-    let boardJsx: JSX.Element[] = [];
+    const boardJsx: JSX.Element[] = [];
     for (let y = height - 1; y >= 0; y--) {
       // Row number (uncolored)
       boardJsx.push(<span key={`row-${y}`}>{y.toString().padStart(2, ' ') + ' '}</span>);
