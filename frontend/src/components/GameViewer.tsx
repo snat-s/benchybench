@@ -154,6 +154,11 @@ export default function GameViewer({ gameData }: GameViewerProps) {
         />
       </div>
 
+      {/* Instructions */}
+      <p className="text-center text-gray-500 italic text-sm mt-2 mb-1">
+        Click &quot;play&quot; to watch the game play out automatically. Otherwise, use the controls below to navigate through the game rounds and view the LLM rationale.
+      </p>
+
       {/* Controls */}
       <div className="flex justify-center gap-4 my-4">
         <button onClick={handleBack}>Back</button>
