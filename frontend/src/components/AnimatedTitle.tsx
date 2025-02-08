@@ -6,13 +6,13 @@ export default function AnimatedTitle() {
   return (
     <>
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "20px" }}>
+        <div className="font-mono flex items-center justify-center gap-20">
           <div className="snake-left" style={{ fontSize: "20px" }}>
-            ~~&gt;
+            ~~~&gt;
           </div>
           <h1 style={{ textAlign: "center" }}>SNAKEBENCH</h1>
           <div className="snake-right" style={{ fontSize: "20px" }}>
-            &lt;~~
+            &lt;~~~
           </div>
         </div>
       </Link>

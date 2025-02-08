@@ -48,8 +48,7 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
 
   return (
     <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <AnimatedTitle />
-      <h1 className="text-xl font-bold mb-4 pt-4">Game Records for Model: {modelId}</h1>
+      <h1 className="text-xl font-bold mb-4 pt-4">Match Records for Model: {modelId}</h1>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>

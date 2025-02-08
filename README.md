@@ -43,7 +43,7 @@ print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" 
 2. **Run a Single Game:**
 
    ```bash
-   python3 main.py --model1 gpt-4o --model2 gemini-2.0-flash-001
+   python3 main.py --model1 o3-mini --model2 gpt-4-0613
    ```
 
 3. **Run Many Games in Parallel:**

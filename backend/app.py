@@ -17,6 +17,7 @@ def get_games():
     try:
         # Get the number of games to return from query parameters, default to 10.
         limit = request.args.get("limit", default=10, type=int)
+        sort_by = request.args.get("sort_by", default="start_time", type=str)
         
         # Build the directory path for completed games.
         # This assumes you're running the backend from your project root.
@@ -32,7 +33,58 @@ def get_games():
         ]
         
         # Randomly shuffle the list and select up to 'limit' game files.
-        random.shuffle(snake_game_files)
+        if sort_by == "start_time":
+            # Read all game files to sort by actual start_time from metadata
+            game_files_with_time = []
+            for file in snake_game_files:
+                try:
+                    with open(os.path.join(games_dir, file), "r", encoding="utf-8") as f:
+                        game_data = json.load(f)
+                        start_time = game_data["metadata"]["start_time"]
+                        game_files_with_time.append((file, start_time))
+                except Exception as e:
+                    logging.error(f"Error reading {file}: {e}")
+                    continue
+            
+            # Sort by start_time, most recent first
+            game_files_with_time.sort(key=lambda x: x[1], reverse=True)
+            snake_game_files = [file for file, _ in game_files_with_time]
+        elif sort_by == "actual_rounds":
+            # Read all game files to sort by actual_rounds from metadata
+            game_files_with_rounds = []
+            for file in snake_game_files:
+                try:
+                    with open(os.path.join(games_dir, file), "r", encoding="utf-8") as f:
+                        game_data = json.load(f)
+                        rounds = game_data["metadata"]["actual_rounds"]
+                        game_files_with_rounds.append((file, rounds))
+                except Exception as e:
+                    logging.error(f"Error reading {file}: {e}")
+                    continue
+            
+            # Sort by actual_rounds, most rounds first
+            game_files_with_rounds.sort(key=lambda x: x[1], reverse=True)
+            snake_game_files = [file for file, _ in game_files_with_rounds]
+        elif sort_by == "total_score":
+            # Read all game files to sort by total score from metadata
+            game_files_with_score = []
+            for file in snake_game_files:
+                try:
+                    with open(os.path.join(games_dir, file), "r", encoding="utf-8") as f:
+                        game_data = json.load(f)
+                        final_scores = game_data["metadata"]["final_scores"]
+                        total_score = sum(final_scores.values())
+                        game_files_with_score.append((file, total_score))
+                except Exception as e:
+                    logging.error(f"Error reading {file}: {e}")
+                    continue
+            
+            # Sort by total score, highest first
+            game_files_with_score.sort(key=lambda x: x[1], reverse=True)
+            snake_game_files = [file for file, _ in game_files_with_score]
+        else:
+            random.shuffle(snake_game_files)
+        
         selected_files = snake_game_files[:min(limit, len(snake_game_files))]
         
         valid_games = []

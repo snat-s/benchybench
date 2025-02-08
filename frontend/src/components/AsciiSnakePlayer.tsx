@@ -134,7 +134,7 @@ export default function AsciiSnakeGame({ initialGameData }: AsciiSnakeGameProps)
             href={`/match/${gameData.metadata.game_id}`}
             className="text-blue-600 hover:text-blue-800 text-sm"
           >
-            view match
+            View match
           </a>
         </div>
       </div>

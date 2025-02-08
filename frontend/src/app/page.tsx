@@ -1,6 +1,5 @@
 export const runtime = 'nodejs';
 
-import AnimatedTitle from '@/components/AnimatedTitle'
 import AsciiSnakeGame from '@/components/AsciiSnakePlayer';
 import Leaderboard from '@/components/Leaderboard'
 
@@ -66,7 +65,7 @@ export default async function Page() {
 
   let games: GameData[] = [];
   try {
-    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=16`, { next: { revalidate: 300 } });
+    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=16&sort_by=total_score`, { next: { revalidate: 300 } });
     const gamesData = await gamesResponse.json();
     games = gamesData.games;
   } catch (error) {
@@ -76,13 +75,26 @@ export default async function Page() {
   }
 
   return (
-    <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <AnimatedTitle />
+    <div className="font-mono max-w-[800px] mx-auto p-5 text-sm">
       <hr />
       <p>
-        What happens when you make two LLMs fight in snake arena?
+        What happens when you make two LLMs battle head-to-head in snake arena?
         <br />
-        We tested 12 LLMs against each other to see who would win.
+        We tested 15 LLMs against each other to see who would win.
+        <br />
+        <br />
+        Each snake is randomly initialized. Then we simultaneously ask the two snakes (LLMs) to pick their next move.
+        <br />
+        The game ends when one snake hits a wall, runs into itself, or runs into the other snake.
+        <br />
+        <br />
+        We then calculate the Elo rating for each snake based on the game results.
+        <br />
+        <br />
+        In general, most interseting matches come from o1, o3, and sonnet. Other LLMs keep hitting the wall.
+        <br />
+        <br />
+        See my thoughts, reflections, and findings <a className="text-blue-500 underline" href="/findings">here</a>.
       </p>
       <hr />
       <br />
@@ -91,18 +103,12 @@ export default async function Page() {
       <Leaderboard data={leaderboardData} />
       <br />
       <br />
-      <h3>Latest Matches:</h3>
+      <h3>Best Matches:</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-4 pt-4">
         {games.map((game: GameData) => (
           <AsciiSnakeGame key={game.metadata.game_id} initialGameData={game} />
         ))}
       </div>
-      <p>
-        Made with ❤️ by <a href="https://www.x.com/gregkamradt">Greg Kamradt</a> - <a href="https://github.com/gkamradt/SnakeBench">Code Open Source</a>
-      </p>
-      <p style={{ textAlign: "center", fontSize: "0.8em" }}>
-        Last updated: February 5, 2025 8:27 AM PT
-      </p>
     </div>
   );
 }
