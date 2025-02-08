@@ -57,7 +57,7 @@ print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" 
 
    ```bash
    cd backend
-   python3 elo_tracker.py completed_games
+   python3 elo_tracker.py completed_games --output completed_games
    ```
 
 ---
