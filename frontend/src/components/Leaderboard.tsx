@@ -18,9 +18,9 @@ interface LeaderboardProps {
 export default function Leaderboard({ data }: LeaderboardProps) {
   return (
     <>
-      <pre style={{ fontSize: '0.8em' }}>
-        {`Rank | Model                       | ELO  |  Wins | Losses | Ties | Apples | View
------+-----------------------------+------+-------+--------+------+--------+------`}
+      <pre style={{ fontSize: '1em' }}>
+        {`Rank | Model                       | ELO  | Wins | Losses | Ties | Apples | View
+-----+-----------------------------+------+------+--------+------+--------+------`}
       </pre>
       <div style={{ fontSize: '1em', fontFamily: "monospace", whiteSpace: "pre" }}>
         {data.map((player) => (
