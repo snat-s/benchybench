@@ -98,7 +98,7 @@ export default async function Page() {
         ))}
       </div>
       <p>
-        Made with ❤️ by <a href="https://www.x.com/gregkamradt">Greg Kamradt</a>
+        Made with ❤️ by <a href="https://www.x.com/gregkamradt">Greg Kamradt</a> - <a href="https://github.com/gkamradt/SnakeBench">Code Open Source</a>
       </p>
       <p style={{ textAlign: "center", fontSize: "0.8em" }}>
         Last updated: February 5, 2025 8:27 AM PT
