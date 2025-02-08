@@ -205,7 +205,7 @@ def main():
         description="Calculate Elo ratings and gather stats from a folder of game result JSON files."
     )
     parser.add_argument("folder", help="Path to folder containing game result JSON files.")
-    parser.add_argument("--output", help="Path to output folder for stats.json")
+    parser.add_argument("--output", required=True, help="Path to output folder for stats.json")
     args = parser.parse_args()
 
     # Find all JSON files

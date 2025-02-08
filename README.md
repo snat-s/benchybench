@@ -35,9 +35,9 @@ The included instructions allow you to generate model pairs, simulate games, run
 1. **Generate Model Pairs:**
 
    ```bash
-   python -c "import itertools; 
-   models = [m.strip() for m in open('models.txt') if m.strip()]; 
-   print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" > model_pairs.txt
+python -c "import itertools; 
+models = [m.strip() for m in open('models.txt') if m.strip()]; 
+print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" > model_pairs.txt
    ```
 
 2. **Run a Single Game:**
@@ -50,7 +50,7 @@ The included instructions allow you to generate model pairs, simulate games, run
 
    ```bash
    cd backend
-   parallel --colsep ' ' --jobs 80 --progress python3 main.py --model1 {1} --model2 {2} :::: model_pairs.txt
+   parallel --colsep ' ' --jobs 30 --progress python3 main.py --model1 {1} --model2 {2} :::: model_pairs.txt
    ```
 
 4. **Run Elo Tracker:**
