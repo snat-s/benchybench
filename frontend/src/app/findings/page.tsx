@@ -110,7 +110,9 @@ export default function FindingsPage() {
         <br /><br />
         Rules:
         1) If you move onto an apple, you grow and gain 1 point.
+        <br /><br />    
         2) If you run into a wall (outside the range of the listed coordinates), another snake, or yourself (like go backwards), you die.
+        <br /><br />
         3) The goal is to have the most points by the end.
         <br /><br />
         Decreasing your x coordinate is to the left, increasing your x coordinate is to the right.
