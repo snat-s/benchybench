@@ -8,13 +8,11 @@ export default function FindingsPage() {
       <section className="mb-6">
         <h2 className="text-lg font-bold mb-2">Key Observations</h2>
         <p>
-          • Google models experienced unexpected rate limits despite being on a paid tier, resulting in fewer results and prompting a deeper dive into GCP settings.
+          • LLMs often misinterpreted the board layout provided in text format. This led to cases where models incorrectly believed where their snake&apos;s head was or caused the snake to run into their own tail.
           <br /><br />
-          • Many LLMs misinterpreted the board layout provided in text format. This led to cases where models incorrectly believed where their snake&apos;s head was or even ran backwards into their own tail.
+          • Lower-tier models (including GPT-3.5 Turbo and Haiku) struggled significantly, while GPT-4, Gemini 2.0, and o3-mini showed a baseline performance that allowed for an interesting game.
           <br /><br />
-          • Lower-tier models (including GPT-3.5 Turbo and Haiku) struggled significantly, while GPT-4, Gemini 2.0, and especially o3 Mini (which showcased more reflective thinking) performed noticeably better.
-          <br /><br />
-          • Each LLM took turns simutaniously. The turn-based mechanics highlighted internal chain-of-thought processes. I saved the model responses for analysis.
+          • Context is key, you need to load the LLM up with a lot of information for it to make a good choice. Board position, apple location, other snakes position, etc.
         </p>
       </section>
 
@@ -23,20 +21,20 @@ export default function FindingsPage() {
       <section className="mb-6">
         <h2 className="text-lg font-bold mb-2">Methodology</h2>
         <p>
-          • The board was provided in a textual format. This required us to be explicit about the XY coordinate system—ensuring models understood directional moves—because without a true 2D representation, spatial reasoning was often lost in translation.
+          • The board was provided in a textual format. This required the prompt to be explicit about the XY coordinate system. Without a true 2D representation, spatial reasoning was often lost in translation.
+          <br /><br />
+          • Each LLM took turns simultaneously. The turn-based mechanics highlighted internal chain-of-thought processes. I saved the model responses for analysis.
         </p>
       </section>
 
       <hr />
 
       <section className="mb-6">
-        <h2 className="text-lg font-bold mb-2">Detailed Analysis</h2>
+        <h2 className="text-lg font-bold mb-2">Analysis</h2>
         <p>
           • The text-based board representation proved challenging for LLMs. Since the board is treated as tokens rather than a true 2D map, models often misjudged positions and made erroneous moves, such as running into walls or colliding with themselves.
           <br /><br />
           • While one idea was to restrict models to only legal moves to prevent such errors, doing so might narrow their strategic playing field, effectively handicapping their natural decision-making.
-          <br /><br />
-          • The study underscored that even with explicit positional guidance, a purely token-based interpretation has inherent limitations when simulating spatial dynamics.
         </p>
       </section>
 
@@ -48,6 +46,12 @@ export default function FindingsPage() {
           • With better models, use bigger board sizes.
           <br /><br />
           • Add more snakes, more apples, and add walls to the game.
+        </p>
+      </section>
+      <section className="mb-6">
+        <h2 className="text-lg font-bold mb-2">Other Notes</h2>
+        <p>
+          • Google models experienced unexpected rate limits despite being on a paid tier, resulting in fewer results and prompting a deeper dive into GCP settings.
         </p>
       </section>
       <section className="mb-6">
