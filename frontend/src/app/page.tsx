@@ -75,8 +75,7 @@ export default async function Page() {
   }
 
   return (
-    <div className="font-mono max-w-[800px] mx-auto p-5 text-sm">
-      <hr />
+    <div className="font-mono max-w-[800px] mx-auto pb-5 pr-5 pl-5 pt-3 text-sm">
       <p>
         What happens when you make two LLMs battle head-to-head in snake arena?
         <br />

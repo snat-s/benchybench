@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnimatedTitle from "../components/AnimatedTitle";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AnimatedTitle />
+        <nav className="flex justify-center items-center gap-4 pt-2 font-mono">
+          <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
+          <span className="text-gray-400">•</span>
+          <Link href="/match/693e7347-0053-4723-8ebe-f8309177dfc9" className="hover:text-gray-600 transition-colors">Best Match</Link>
+          <span className="text-gray-400">•</span>
+          <Link href="/findings" className="hover:text-gray-600 transition-colors">Analysis</Link>
+        </nav>
         {children}
         <Footer />
       </body>
