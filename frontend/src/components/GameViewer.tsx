@@ -39,6 +39,7 @@ interface GameData {
 
 interface GameViewerProps {
   gameData: GameData;
+  isLarge?: boolean;
 }
 
 /**
@@ -48,7 +49,7 @@ interface GameViewerProps {
  *  - Two columns with model #1 and model #2 info
  *  - Rationales for the current round
  */
-export default function GameViewer({ gameData }: GameViewerProps) {
+export default function GameViewer({ gameData, isLarge = false }: GameViewerProps) {
   const { rounds, metadata } = gameData;
   
   // Current index in the rounds array
@@ -132,7 +133,7 @@ export default function GameViewer({ gameData }: GameViewerProps) {
   };
 
   return (
-    <div className="container mx-auto max-w-6xl px-4">
+    <div className={`container mx-auto px-4 ${isLarge ? 'max-w-7xl' : 'max-w-6xl'}`}>
       {/* Game outcome banner - show only when game is finished */}
       {currentRoundIndex === rounds.length - 1 && (
         <div className="p-4 mb-4 rounded text-center">
@@ -146,7 +147,7 @@ export default function GameViewer({ gameData }: GameViewerProps) {
       )}
 
       {/* The ASCII snake board for the current round (rendered by the child) */}
-      <div className="flex justify-center">
+      <div className={`flex justify-center ${isLarge ? 'scale-125' : ''}`}>
         <AsciiSnakePlayer
           rounds={rounds}           // pass all rounds
           metadata={metadata}       // pass metadata for model names, etc.
@@ -155,7 +156,7 @@ export default function GameViewer({ gameData }: GameViewerProps) {
       </div>
 
       {/* Instructions */}
-      <p className="text-center text-gray-500 italic text-sm mt-2 mb-1">
+      <p className="text-center text-gray-500 italic text-sm mt-2 mb-1 pt-8">
         Click &quot;play&quot; to watch the game play out automatically. Otherwise, use the controls below to navigate through the game rounds and view the LLM rationale.
       </p>
 
@@ -172,19 +173,19 @@ export default function GameViewer({ gameData }: GameViewerProps) {
       <div className="border border-gray-300 p-4 rounded max-w-4xl mx-auto">
         <h3 className="text-center pb-2">Round {currentRoundIndex}:</h3>
         <div className="grid grid-cols-2 gap-5">
-          <div>
+          <div className="text-[10px] sm:text-xs">
             <h4>Model #1: {modelOneName}</h4>
             <strong>Choice: {modelOneChoice}</strong>
             <br />
             <strong>Rationale:</strong>
-            <p>{modelOneRationale}</p>
+            <p className="whitespace-pre-wrap">{modelOneRationale}</p>
           </div>
-          <div>
+          <div className="text-[10px] sm:text-xs">
             <h4>Model #2: {modelTwoName}</h4>
             <strong>Choice: {modelTwoChoice}</strong>
             <br />
             <strong>Rationale:</strong>
-            <p>{modelTwoRationale}</p>
+            <p className="whitespace-pre-wrap">{modelTwoRationale}</p>
           </div>
         </div>
       </div>

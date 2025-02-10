@@ -11,7 +11,7 @@ K = 32
 INITIAL_RATING = 1500
 
 # Define a ranking for game result strings.
-RESULT_RANK = {"won": 2, "tie": 1, "lost": 0}
+RESULT_RANK = {"won": 2, "tied": 1, "lost": 0}
 
 def get_pair_result(result_i, result_j):
     """
@@ -149,6 +149,7 @@ def update_model_stats(game_data, stats, ratings):
             "my_score": final_scores.get(pid, 0),
             "opponent_score": opponent_score,
             "opponent_model": opponent_model,
+            "opponent_elo": ratings.get(opponent_model, INITIAL_RATING),
             "result": result,
             "start_time": metadata.get("start_time"),
             "end_time": metadata.get("end_time")
@@ -209,7 +210,7 @@ def main():
     args = parser.parse_args()
 
     # Find all JSON files
-    files = glob.glob(os.path.join(args.folder, "*.json"))
+    files = [f for f in glob.glob(os.path.join(args.folder, "*.json")) if not f.endswith("game_index.json")]
     games = []
 
     for filename in files:
@@ -234,20 +235,19 @@ def main():
     # Stats dict: model -> {"wins", "losses", "ties", "apples_eaten", "elo"}
     stats = {}
 
-    print("Initial Elo ratings:")
-    print(f"  (New models start at {INITIAL_RATING})")
-    print("-" * 40)
-    print("\nProcessing games in chronological order...\n")
+    # print("Initial Elo ratings:")
+    # print(f"  (New models start at {INITIAL_RATING})")
+    # print("-" * 40)
+    # print("\nProcessing games in chronological order...\n")
 
     for end_time, game_data in games:
         metadata = game_data.get("metadata", {})
         models = metadata.get("models", {})
         game_result = metadata.get("game_result", {})
 
-        print(f"\nGame finished at {end_time.isoformat()}:")
         overall_summary, matchup_summary = summarize_game_results(models, game_result)
-        print(overall_summary)
-        print(matchup_summary)
+        # print(overall_summary)
+        # print(matchup_summary)
         
         # Update ratings
         ratings = process_game(game_data, ratings)
@@ -255,10 +255,10 @@ def main():
         # Update stats (wins, losses, ties, apples, Elo)
         update_model_stats(game_data, stats, ratings)
 
-        print("Updated Elo ratings:")
-        for model, rating in sorted(ratings.items(), key=lambda x: x[1], reverse=True):
-            print(f"  {model}: {rating:.2f}")
-        print("-" * 40)
+    print("Updated Elo ratings:")
+    for model, rating in sorted(ratings.items(), key=lambda x: x[1], reverse=True):
+        print(f"  {model}: {rating:.2f}")
+    print("-" * 40)
 
     ### ADDED FOR STATS: SAVE stats.json ###
     # Write out stats aggregated across all games
@@ -267,6 +267,49 @@ def main():
         json.dump(stats, f, indent=2)
 
     print(f"\nAggregated stats saved to {output_path}")
+
+    # Additionally, write out a version of stats that excludes game history.
+    # This mirrors stats.json but without the "games" list for each model.
+    model_stats = { 
+        model: {k: v for k, v in data.items() if k != "games"} 
+        for model, data in stats.items() 
+    }
+    simple_output_path = os.path.join(args.output, "stats_simple.json")
+    with open(simple_output_path, "w") as f:
+        json.dump(model_stats, f, indent=2)
+
+    print(f"\nModel-only stats saved to {simple_output_path}")
+
+    ### NEW FUNCTIONALITY: BUILD AND SAVE A GAME INDEX ###
+    # Build a lightweight index for game metadata to speed up future queries.
+    game_index = []
+    for end_time, game_data in games:
+        metadata = game_data.get("metadata", {})
+        game_id = metadata.get("game_id")
+        if not game_id:
+            continue
+        # Use known keys; here we compute total_score from final_scores.
+        final_scores = metadata.get("final_scores", {})
+        total_score = sum(final_scores.values()) if final_scores else 0
+        start_time = metadata.get("start_time", "")
+        actual_rounds = metadata.get("actual_rounds", 0)
+
+        # Construct the filename from the game_id using your naming convention.
+        filename = f"snake_game_{game_id}.json"
+        game_index.append({
+            "game_id": game_id,
+            "filename": filename,
+            "start_time": start_time,
+            "total_score": total_score,
+            "actual_rounds": actual_rounds
+        })
+
+    # Save the game index into the same folder as the game files.
+    index_path = os.path.join(args.folder, "game_index.json")
+    with open(index_path, "w") as f:
+        json.dump(game_index, f, indent=2)
+    
+    print(f"\nGame index saved to {index_path}")
 
 if __name__ == "__main__":
     main()

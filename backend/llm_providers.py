@@ -2,6 +2,7 @@ import os
 from openai import OpenAI
 import anthropic
 import google.generativeai as genai  # Add this import
+from together import Together
 
 class LLMProviderInterface:
     """
@@ -44,7 +45,7 @@ class GeminiProvider(LLMProviderInterface):
     def get_response(self, model: str, prompt: str) -> str:
         model = genai.GenerativeModel(model)
         response = model.generate_content(
-            contents=[{"parts": [prompt], "role": "user"}],
+            contents=prompt,
             generation_config={
                 "max_output_tokens": 4096,
                 "temperature": 0.0
@@ -52,6 +53,18 @@ class GeminiProvider(LLMProviderInterface):
             stream=False
         )
         return response.text.strip()
+    
+
+class TogetherProvider(LLMProviderInterface):
+    def __init__(self, api_key: str):
+        self.client = Together(api_key=api_key)
+
+    def get_response(self, model: str, prompt: str) -> str:
+        response = self.client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.choices[0].message.content.strip()
 
 def create_llm_provider(model: str) -> LLMProviderInterface:
     """
@@ -65,18 +78,23 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     openai_substrings = ["gpt-", "o1-", "o3-"]         # Add more OpenAI identifying substrings to this list if needed.
     anthropic_substrings = ["claude"]     # Add more Anthropic identifying substrings to this list if needed.
     gemini_substrings = ["gemini"]
+    together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
 
-    if any(substr in model_lower for substr in openai_substrings):
+    if any(substr.lower() in model_lower for substr in openai_substrings):
         if not os.getenv("OPENAI_API_KEY"):
             raise ValueError("OPENAI_API_KEY is not set in the environment variables.")
         return OpenAIProvider(api_key=os.getenv("OPENAI_API_KEY"))
-    elif any(substr in model_lower for substr in anthropic_substrings):
+    elif any(substr.lower() in model_lower for substr in anthropic_substrings):
         if not os.getenv("ANTHROPIC_API_KEY"):
             raise ValueError("ANTHROPIC_API_KEY is not set in the environment variables.")
         return AnthropicProvider(api_key=os.getenv("ANTHROPIC_API_KEY"))
-    elif any(substr in model_lower for substr in gemini_substrings):  # Add this block
+    elif any(substr.lower() in model_lower for substr in gemini_substrings):
         if not os.getenv("GOOGLE_API_KEY"):
             raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
         return GeminiProvider(api_key=os.getenv("GOOGLE_API_KEY"))
+    elif any(substr.lower() in model_lower for substr in together_substrings):
+        if not os.getenv("TOGETHERAI_API_KEY"):
+            raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")
+        return TogetherProvider(api_key=os.getenv("TOGETHERAI_API_KEY"))
     else:
         raise ValueError(f"Unsupported model: {model}")

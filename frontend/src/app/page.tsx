@@ -39,7 +39,7 @@ type GameData = {
 export default async function Page() {
   let aggregatedData: Record<string, StatsData> = {};
   try {
-    const response = await fetch(`${process.env.FLASK_URL}/api/stats`, { next: { revalidate: 300 } });
+    const response = await fetch(`${process.env.FLASK_URL}/api/stats?simple=true`, { next: { revalidate: 300 } });
     const data = await response.json();
     aggregatedData = data.aggregatedData;
   } catch (error) {
@@ -65,7 +65,7 @@ export default async function Page() {
 
   let games: GameData[] = [];
   try {
-    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=16&sort_by=total_score`, { next: { revalidate: 300 } });
+    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=12&sort_by=total_score`, { next: { revalidate: 300 } });
     const gamesData = await gamesResponse.json();
     games = gamesData.games;
   } catch (error) {
@@ -90,7 +90,7 @@ export default async function Page() {
         We then calculate the Elo rating for each snake based on the game results.
         <br />
         <br />
-        In general, most interseting matches come from o1, o3, and sonnet. Other LLMs keep hitting the wall.
+        In general, the most interesting matches come from who you&apos;d expect: Big Llama, o1, o3, Sonnet 3.5 and DeepSeek. Other LLMs keep hitting the wall.
         <br />
         <br />
         See my thoughts, reflections, and findings <a className="text-blue-500 underline" href="/findings">here</a>.

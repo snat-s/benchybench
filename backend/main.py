@@ -210,7 +210,7 @@ class LLMPlayer(Player):
         # Summarize the multiple apples
         apples_str = ", ".join(str(a) for a in game_state.apples)
         prompt = (
-            f"You are controlling a snake in a multi-apple Snake game."
+            f"You are controlling a snake in a multi-apple Snake game. "
             f"The board size is {game_state.width}x{game_state.height}. Normal X,Y coordinates are used. Coordinates range from (0,0) at bottom left to ({game_state.width-1},{game_state.height-1}) at top right.\n"
             f"Apples at: {apples_str}\n"
             f"Your snake ID: {self.snake_id} which is currently positioned at {game_state.snake_positions[self.snake_id][0]}\n\n"
@@ -529,22 +529,31 @@ class SnakeGame:
             # automatically convert (x, y) to [x, y].
             output.append(state_dict)
         return output
+    
+    def clean_model_name(self, model_name: str) -> str:
+        # Check if the model name contains a provider prefix (e.g., "mistral/")
+        if '/' in model_name:
+            # Return everything after the last '/'
+            return model_name.split('/')[-1]
+        # If no provider prefix, return the original name
+        return model_name
 
 
     def save_history_to_json(self, filename=None):
         if filename is None:
             filename = f"snake_game_{self.game_id}.json"
+
+        model_names = {
+            sid: self.clean_model_name(player.model if hasattr(player, "model") else player.__class__.__name__)
+            for sid, player in self.players.items()
+        }
         
         # Build metadata for the game
         metadata = {
             "game_id": self.game_id,
             "start_time": datetime.fromtimestamp(self.start_time).isoformat(),
             "end_time": datetime.fromtimestamp(time.time()).isoformat(),
-            "models": {
-                # Record the model name if available, otherwise the player's class name.
-                sid: (player.model if hasattr(player, "model") else player.__class__.__name__)
-                for sid, player in self.players.items()
-            },
+            "models": model_names,
             "game_result": self.game_result,
             "final_scores": self.scores,
             "death_info": {

@@ -6,6 +6,7 @@ interface Game {
   opponent_score: number;
   opponent_model: string;
   start_time: string;
+  opponent_elo: number;
   end_time: string;
   result: string;
   death_info?: {
@@ -28,7 +29,7 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
   const { id: modelId } = await params;
   
   // Fetch the full stats
-  const response = await fetch(`${process.env.FLASK_URL}/api/stats`, { next: { revalidate: 300 } });
+  const response = await fetch(`${process.env.FLASK_URL}/api/stats?model=${modelId}`, { next: { revalidate: 300 } });
   const stats = await response.json();
 
   // Use the awaited modelId
@@ -44,7 +45,7 @@ export default async function ModelGamesPage({ params }: { params: Promise<{ id:
     );
   }
 
-  const games = modelStats.games || [];
+  const games = [...(modelStats.games || [])].sort((a, b) => (b.opponent_elo || 0) - (a.opponent_elo || 0));
 
   return (
     <div style={{ fontFamily: "monospace", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>

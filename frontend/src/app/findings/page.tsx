@@ -88,7 +88,7 @@ export default function FindingsPage() {
         <br />
         0 . . . . . . . . . .
         <br />
-        0 1 2 3 4 5 6 7 8 9
+        &nbsp;&nbsp;0 1 2 3 4 5 6 7 8 9
         <br /><br />
         --Your last move information:--
         <br /><br />

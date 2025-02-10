@@ -37,7 +37,7 @@ export default function RootLayout({
         <nav className="flex justify-center items-center gap-4 pt-2 font-mono">
           <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
           <span className="text-gray-400">•</span>
-          <Link href="/match/693e7347-0053-4723-8ebe-f8309177dfc9" className="hover:text-gray-600 transition-colors">Best Match</Link>
+          <Link href="/match/ffa06a21-3ba4-429b-a544-6b7d60c533b8" className="hover:text-gray-600 transition-colors">Best Match</Link>
           <span className="text-gray-400">•</span>
           <Link href="/findings" className="hover:text-gray-600 transition-colors">Analysis</Link>
         </nav>
