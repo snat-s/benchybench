@@ -15,33 +15,33 @@ logging.basicConfig(level=logging.INFO)
 @app.route("/api/games", methods=["GET"])
 def get_games():
     try:
-        # Get the number of games to return from query parameters, default to 10.
+        print("Getting games")
+        # Get the number of games to return from query parameters, default to 10
         limit = request.args.get("limit", default=10, type=int)
         sort_by = request.args.get("sort_by", default="start_time", type=str)
 
-        # Load the game index (precomputed metadata for games).
+        # Load the game index
         game_index_path = os.path.join(os.getcwd(), "completed_games", "game_index.json")
         with open(game_index_path, "r", encoding="utf-8") as f:
             game_index = json.load(f)
 
-        # Sort the index based on the sort_by parameter.
+        # Sort the index based on the sort_by parameter
         if sort_by == "start_time":
-            # Sort by start_time, most recent first.
             sorted_index = sorted(game_index, key=lambda x: x["start_time"], reverse=True)
         elif sort_by == "total_score":
-            # Sort by total_score, highest first.
             sorted_index = sorted(game_index, key=lambda x: x["total_score"], reverse=True)
         elif sort_by == "actual_rounds":
-            # Sort by actual_rounds, most rounds first.
             sorted_index = sorted(game_index, key=lambda x: x["actual_rounds"], reverse=True)
         else:
-            # If the sort_by parameter is not recognized, use random order.
-            sorted_index = game_index[:]
-            random.shuffle(sorted_index)
+            # For random order, just take random sample directly from index
+            selected_games_index = random.sample(game_index, min(limit, len(game_index)))
+            sorted_index = None
 
-        # Select the limited number of games from the sorted index.
-        selected_games_index = sorted_index[:min(limit, len(sorted_index))]
+        # For sorted queries, take only the top N records we need
+        if sorted_index is not None:
+            selected_games_index = sorted_index[:min(limit, len(sorted_index))]
 
+        # Only load the specific games we need
         valid_games = []
         games_dir = os.path.join(os.getcwd(), "completed_games")
         for record in selected_games_index:
@@ -54,7 +54,7 @@ def get_games():
                 logging.error(f"Error reading or parsing file {file_path}: {e}")
                 continue
 
-        # Return the game data as JSON.
+        print(f"Returning {len(valid_games)} games")
         return jsonify({"games": valid_games})
     
     except Exception as error:
