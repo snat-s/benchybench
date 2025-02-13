@@ -65,7 +65,7 @@ export default async function Page() {
 
   let games: GameData[] = [];
   try {
-    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=12&sort_by=total_score`, { next: { revalidate: 300 } });
+    const gamesResponse = await fetch(`${process.env.FLASK_URL}/api/games?limit=4&sort_by=total_score`, { next: { revalidate: 300 } });
     const gamesData = await gamesResponse.json();
     games = gamesData.games;
   } catch (error) {
