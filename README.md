@@ -9,7 +9,7 @@ LLM Snake Arena is a project that pits different Large Language Models (LLMs) ag
 ### Backend: Game Simulation (`backend/main.py`)
 
 - **Snake & Game Mechanics:**
-  - **Snake Representation:** Each snake is represented as a deque of board positions. The game handles moving the snake’s head, updating the tail, and managing growth when an apple is eaten.
+  - **Snake Representation:** Each snake is represented as a deque of board positions. The game handles moving the snake's head, updating the tail, and managing growth when an apple is eaten.
   - **Collision Logic:** The game checks for collisions—with walls, with snake bodies (including self-collisions), and with head-to-head moves [if two or more snake heads land on the same cell].
   - **Rounds and Game-Over:** The simulation proceeds round-by-round. Rounds end when one snake remains or when a maximum round count is reached. The game then records the outcome (score, win/loss/tie, history) and saves the complete game state as a JSON file.
 
@@ -93,3 +93,14 @@ print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" 
 ---
 
 Made with ❤️ by [Greg Kamradt](https://www.x.com/gregkamradt)
+
+```bibtex
+@misc{llm_snake_arena_2023,
+  author       = {Greg Kamradt},
+  organization = {ARC Prize Foundation},
+  title        = {LLM Snake Arena: Competitive Snake Game Simulation with LLMs},
+  year         = {2025},
+  howpublished = {\url{https://github.com/gkamradt/SnakeBench}},
+  note         = {Accessed on: Month Day, Year}
+}
+```
