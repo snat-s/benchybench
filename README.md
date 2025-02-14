@@ -95,10 +95,10 @@ print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" 
 Made with ❤️ by [Greg Kamradt](https://www.x.com/gregkamradt)
 
 ```bibtex
-@misc{llm_snake_arena_2023,
+@misc{snake_bench_2025,
   author       = {Greg Kamradt},
   organization = {ARC Prize Foundation},
-  title        = {LLM Snake Arena: Competitive Snake Game Simulation with LLMs},
+  title        = {Snake Bench: Competitive Snake Game Simulation with LLMs},
   year         = {2025},
   howpublished = {\url{https://github.com/gkamradt/SnakeBench}},
   note         = {Accessed on: Month Day, Year}
