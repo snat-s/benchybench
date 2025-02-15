@@ -3,6 +3,8 @@ from openai import OpenAI
 import anthropic
 import google.generativeai as genai  # Add this import
 from together import Together
+from ollama import chat
+from ollama import ChatResponse
 
 class LLMProviderInterface:
     """
@@ -66,6 +68,20 @@ class TogetherProvider(LLMProviderInterface):
         )
         return response.choices[0].message.content.strip()
 
+class OllamaProvider(LLMProviderInterface):
+    def __init__(self, url: str = "http://localhost:11434"):
+        self.url = url
+
+    def get_response(self, model: str, prompt: str) -> str:
+        model = model[len("ollama-"):] if model.lower().startswith("ollama-") else model
+        response: ChatResponse = chat(model=model, messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+        ])
+        return response.message.content.strip()
+
 def create_llm_provider(model: str) -> LLMProviderInterface:
     """
     Factory function for creating an LLM provider instance.
@@ -79,6 +95,7 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     anthropic_substrings = ["claude"]     # Add more Anthropic identifying substrings to this list if needed.
     gemini_substrings = ["gemini"]
     together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
+    ollama_substrings = ["ollama-"]
 
     if any(substr.lower() in model_lower for substr in openai_substrings):
         if not os.getenv("OPENAI_API_KEY"):
@@ -92,6 +109,8 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
         if not os.getenv("GOOGLE_API_KEY"):
             raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
         return GeminiProvider(api_key=os.getenv("GOOGLE_API_KEY"))
+    elif any(substr.lower() in model_lower for substr in ollama_substrings):
+        return OllamaProvider(url=os.getenv("OLLAMA_URL", "http://localhost:11434"))
     elif any(substr.lower() in model_lower for substr in together_substrings):
         if not os.getenv("TOGETHERAI_API_KEY"):
             raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")

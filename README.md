@@ -35,15 +35,19 @@ The included instructions allow you to generate model pairs, simulate games, run
 1. **Generate Model Pairs:**
 
    ```bash
-python -c "import itertools; 
-models = [m.strip() for m in open('models.txt') if m.strip()]; 
-print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" > model_pairs.txt
+   python -c "import itertools; models = [m.strip() for m in open('models.txt') if m.strip()]; print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" > model_pairs.txt
    ```
 
 2. **Run a Single Game:**
 
    ```bash
    python3 main.py --model1 o3-mini --model2 gpt-4-0613
+   ```
+
+   to use ollama, add ollama- to the model name:
+
+   ```bash
+   python3 main.py --model1 ollama-llama3.2 --model2 ollama-llama3.3
    ```
 
 3. **Run Many Games in Parallel:**
