@@ -46,6 +46,12 @@ print('\n'.join(' '.join(pair) for pair in itertools.combinations(models, 2)))" 
    python3 main.py --model1 o3-mini --model2 gpt-4-0613
    ```
 
+   to use ollama, add ollama- to the model name:
+
+   ```bash
+   python3 main.py --model1 ollama-llama3.2 --model2 ollama-llama3.3
+   ```
+
 3. **Run Many Games in Parallel:**
 
    ```bash
