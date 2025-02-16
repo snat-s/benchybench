@@ -212,7 +212,7 @@ class LLMPlayer(Player):
         prompt = (
             f"You are controlling a snake in a multi-apple Snake game. "
             f"The board size is {game_state.width}x{game_state.height}. Normal X,Y coordinates are used. Coordinates range from (0,0) at bottom left to ({game_state.width-1},{game_state.height-1}) at top right.\n"
-            f"Apples at: {apples_str}\n"
+            f"Apples at: {apples_str}\n\n"
             f"Your snake ID: {self.snake_id} which is currently positioned at {game_state.snake_positions[self.snake_id][0]}\n\n"
             f"Enemy snakes positions:\n" + 
             "\n".join([f"* Snake #{sid} is at position {pos[0]} with body at {pos[1:]}" for sid, pos in game_state.snake_positions.items() if sid != self.snake_id]) + "\n\n"
@@ -618,27 +618,32 @@ def main():
     parser = argparse.ArgumentParser(
         description="Run Snake Game with two distinctive LLM models as players."
     )
-    parser.add_argument("--model1", type=str, required=True,
-                        help="Model ID for snake 1 (e.g. gpt-4o-mini-2024-07-18)")
-    parser.add_argument("--model2", type=str, required=True,
-                        help="Model ID for snake 2 (must be different from model1)")
+    parser.add_argument("--models", type=str, nargs='+', required=True,
+                        help="2 or more model IDs for each snake (e.g. 'gpt-4o-mini-2024-07-18 llama3-8b-8192')")
+    parser.add_argument("--width", type=int, required=False, default=10,
+                        help="Width of the board from 0 to N")
+    parser.add_argument("--height", type=int, required=False, default=10,
+                        help="Height of the board from 0 to N")
+    parser.add_argument("--max_rounds", type=int, required=False, default=100,
+                        help="Maximum number of rounds")
+    parser.add_argument("--num_apples", type=int, required=False, default=5,
+                        help="Number of apples on the board")
+                        
+
     args = parser.parse_args()
 
-    if args.model1 == args.model2:
-        raise ValueError("Model1 and Model2 must be different.")
+    if len(args.models) < 2:
+        raise ValueError("At least two models must be provided.")
 
     # Create a game with a 5x5 board and 100 rounds (you can adjust these as needed)
-    game = SnakeGame(width=10, height=10, max_rounds=100, num_apples=5)
+    game = SnakeGame(width=args.width, height=args.height, max_rounds=args.max_rounds, num_apples=args.num_apples)
 
     # Add two snakes with LLM players using the specified models
-    game.add_snake(
-        snake_id="1",
-        player=LLMPlayer("1", model=args.model1)
-    )
-    game.add_snake(
-        snake_id="2",
-        player=LLMPlayer("2", model=args.model2)
-    )
+    for i, model in enumerate(args.models, start=1):
+        game.add_snake(
+            snake_id=str(i),
+            player=LLMPlayer(str(i), model=model)
+        )
 
     # Record initial state and run the game
     game.record_history()

@@ -41,20 +41,22 @@ The included instructions allow you to generate model pairs, simulate games, run
 2. **Run a Single Game:**
 
    ```bash
-   python3 main.py --model1 o3-mini --model2 gpt-4-0613
+   cd backend
+   python3 main.py --models gpt-3.5-turbo-0125 claude-3-haiku-20240307
    ```
 
    to use ollama, add ollama- to the model name:
 
    ```bash
-   python3 main.py --model1 ollama-llama3.2 --model2 ollama-llama3.3
+   cd backend
+   python3 main.py --models ollama-llama3.2 ollama-llama3.3
    ```
 
 3. **Run Many Games in Parallel:**
 
    ```bash
    cd backend
-   parallel --colsep ' ' --jobs 30 --progress python3 main.py --model1 {1} --model2 {2} :::: model_pairs.txt
+   parallel --colsep ' ' --jobs 30 --progress python3 main.py --models {1} {2} :::: model_pairs.txt
    ```
 
 4. **Run Elo Tracker:**
