@@ -10,6 +10,7 @@ import json
 import uuid
 import argparse
 from llm_providers import create_llm_provider
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 load_dotenv()
 
@@ -196,7 +197,9 @@ class LLMPlayer(Player):
         direction = self.get_direction_from_response(response_text)
 
         if direction is None:
+            print(f"Player {self.snake_id} returned an invalid direction. Choosing a random move.")
             direction = random.choice(list(VALID_MOVES))
+            response_text += f"\n\nThis is a random move: {direction}"
 
         move_data = {
             "direction": direction,
@@ -339,6 +342,39 @@ class SnakeGame:
             move_history=list(self.move_history)
         )
 
+    def gather_moves_in_parallel(self, game):
+        """
+        Gathers each snake's move in parallel using threads.
+        game: the SnakeGame instance
+        Returns a dictionary: { snake_id: { "move": ..., "rationale": ... }, ... }
+        """
+        round_moves = {}
+        # Take one snapshot of the state to pass to each player
+        state_snapshot = game.get_current_state()
+        
+        # We'll limit max_workers to the number of alive snakes (or just len of all snakes).
+        # If you have many snakes, you can set a higher or lower limit based on preference.
+        alive_snakes = [sid for sid, s in game.snakes.items() if s.alive]
+
+        with ThreadPoolExecutor(max_workers=len(alive_snakes)) as executor:
+            # Schedule all get_move calls
+            futures = {}
+            for snake_id in alive_snakes:
+                player = game.players[snake_id]
+                futures[executor.submit(player.get_move, state_snapshot)] = snake_id
+            
+            # Collect results as they complete
+            for future in as_completed(futures):
+                snake_id = futures[future]
+                move_data = future.result()  # This is the dict returned by LLMPlayer.get_move
+                round_moves[snake_id] = {
+                    "move": move_data["direction"],
+                    "rationale": move_data["rationale"]
+                }
+                print(f"Player {snake_id} chose move: {move_data['direction']}")
+
+        return round_moves
+
     def run_round(self):
         """
         Execute one round:
@@ -355,27 +391,13 @@ class SnakeGame:
         
         self.print_board()
 
-        # 1) Gather moves
-        round_moves = {}
-        for snake_id, snake in self.snakes.items():
-            if snake.alive:
-                result = self.players[snake_id].get_move(self.get_current_state())
-                move = result["direction"]
-                rationale = result["rationale"]
-
-                round_moves[snake_id] = {
-                    "move": move,
-                    "rationale": rationale
-                }
-                # Add debug print here
-                print(f"Player {snake_id} chose move: {move}")
-            else:
-                round_moves[snake_id] = None
-
+        # --- PARALLEL GATHER OF MOVES ---
+        round_moves = self.gather_moves_in_parallel(self)
         # Store the moves of this round
         self.move_history.append(round_moves)
 
-                # 2) Compute new heads (this remains the same)
+        # The rest of your original code remains the same ...
+        # 2) Compute new heads
         new_heads: Dict[str, Optional[Tuple[int,int]]] = {}
         for sid, move_data in round_moves.items():
             snake = self.snakes[sid]
