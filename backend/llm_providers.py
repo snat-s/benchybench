@@ -22,7 +22,7 @@ class OpenAIProvider(LLMProviderInterface):
         response = self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
-            max_completion_tokens=4096
+            max_completion_tokens=4096,
         )
         return response.choices[0].message.content.strip()
 
@@ -36,7 +36,7 @@ class AnthropicProvider(LLMProviderInterface):
         response = self.client.messages.create(
             model=model,
             max_tokens=4096,
-            messages=[{"role": "user", "content": prompt}]
+            messages=[{"role": "user", "content": prompt}],
         )
         return response.content[0].text.strip()
     
@@ -50,7 +50,6 @@ class GeminiProvider(LLMProviderInterface):
             contents=prompt,
             generation_config={
                 "max_output_tokens": 4096,
-                "temperature": 0.0
             },
             stream=False
         )

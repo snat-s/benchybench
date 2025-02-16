@@ -673,7 +673,7 @@ def main():
         game.run_round()
 
     print("\nFinal Scores:", game.scores)
-    print("Game history (round by round):")
+    print(f"Game history (ID: {game.game_id}):")
     for gs in game.history:
         print(gs)
 
