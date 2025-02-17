@@ -7,11 +7,11 @@
     "elo": 1433.1062573623565
   },
   "o3-mini": {
-    "wins": 163,
-    "losses": 21,
-    "ties": 23,
-    "apples_eaten": 600,
-    "elo": 1853.2146971833217
+    "wins": 183,
+    "losses": 27,
+    "ties": 28,
+    "apples_eaten": 713,
+    "elo": 1787.9374956269328
   },
   "claude-3-haiku-20240307": {
     "wins": 50,
@@ -56,11 +56,11 @@
     "elo": 1490.7748889022707
   },
   "gpt-4o-mini-2024-07-18": {
-    "wins": 123,
-    "losses": 80,
-    "ties": 11,
-    "apples_eaten": 232,
-    "elo": 1630.8442586374103
+    "wins": 135,
+    "losses": 96,
+    "ties": 14,
+    "apples_eaten": 292,
+    "elo": 1564.2407791177027
   },
   "o1-mini": {
     "wins": 119,
@@ -105,11 +105,11 @@
     "elo": 1543.0151980696335
   },
   "DeepSeek-R1": {
-    "wins": 90,
-    "losses": 20,
-    "ties": 9,
-    "apples_eaten": 289,
-    "elo": 1761.9384638374786
+    "wins": 112,
+    "losses": 25,
+    "ties": 14,
+    "apples_eaten": 414,
+    "elo": 1768.554246866839
   },
   "Llama-3-8b-chat-hf": {
     "wins": 29,
@@ -154,11 +154,11 @@
     "elo": 1359.415916850562
   },
   "Meta-Llama-3-8B-Instruct-Turbo": {
-    "wins": 24,
-    "losses": 69,
+    "wins": 28,
+    "losses": 97,
     "ties": 7,
-    "apples_eaten": 23,
-    "elo": 1320.8963259153409
+    "apples_eaten": 27,
+    "elo": 1249.8126754328384
   },
   "Mixtral-8x22B-Instruct-v0.1": {
     "wins": 34,
@@ -350,38 +350,38 @@
     "elo": 1574.34439898801
   },
   "gemini-2.0-flash": {
-    "wins": 7,
-    "losses": 1,
-    "ties": 3,
-    "apples_eaten": 42,
-    "elo": 1597.4162500698958
+    "wins": 30,
+    "losses": 6,
+    "ties": 7,
+    "apples_eaten": 156,
+    "elo": 1749.1709419943272
   },
   "gemini-2.0-flash-lite-preview-02-05": {
-    "wins": 4,
-    "losses": 3,
-    "ties": 3,
-    "apples_eaten": 17,
-    "elo": 1544.199655664434
+    "wins": 16,
+    "losses": 18,
+    "ties": 7,
+    "apples_eaten": 74,
+    "elo": 1534.3363769479417
   },
   "gemini-1.5-flash": {
-    "wins": 2,
-    "losses": 6,
-    "ties": 2,
-    "apples_eaten": 8,
-    "elo": 1466.7264543842446
+    "wins": 14,
+    "losses": 22,
+    "ties": 6,
+    "apples_eaten": 42,
+    "elo": 1537.8286680136214
   },
   "gemini-1.5-flash-8b": {
-    "wins": 3,
-    "losses": 4,
+    "wins": 10,
+    "losses": 29,
     "ties": 2,
-    "apples_eaten": 3,
-    "elo": 1501.6781291235675
+    "apples_eaten": 27,
+    "elo": 1396.0273489347162
   },
   "gemini-1.5-pro": {
-    "wins": 2,
-    "losses": 6,
-    "ties": 0,
-    "apples_eaten": 24,
-    "elo": 1469.3772393623644
+    "wins": 18,
+    "losses": 18,
+    "ties": 3,
+    "apples_eaten": 107,
+    "elo": 1558.3829412431382
   }
 }

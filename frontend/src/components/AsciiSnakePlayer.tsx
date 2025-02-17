@@ -44,7 +44,7 @@ export default function AsciiSnakeGame({ initialGameData }: AsciiSnakeGameProps)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRoundIdx((prev) => (prev + 1) % gameData.rounds.length)
-    }, 1000) // Change round every 1 second
+    }, parseInt(process.env.NEXT_PUBLIC_ANIMATION_SPEED || '750')) // Change round every 1 second
 
     return () => clearInterval(interval)
   }, [gameData])
@@ -120,7 +120,7 @@ export default function AsciiSnakeGame({ initialGameData }: AsciiSnakeGameProps)
   return (
       <div className="font-mono border border-gray-200 p-6 hover:shadow-lg transition-shadow inline-block min-w-fit">
         {/* Game Title */}
-        <div className="whitespace-pre-wrap break-all max-w-full text-sm mb-4 text-center h-[4.6em] line-clamp-3 overflow-hidden">
+        <div className="whitespace-pre-wrap break-all max-w-full text-sm mb-4 text-center line-clamp-3 overflow-hidden">
           {titleAscii}
         </div>
         {/* ASCII Board */}

@@ -71,7 +71,7 @@ export default function GameViewer({ gameData, isLarge = false }: GameViewerProp
             return prev;
           }
         });
-      }, 1000); // 1 second per move (adjust as needed)
+      }, parseInt(process.env.NEXT_PUBLIC_ANIMATION_SPEED || '750')); // 1 second per move (adjust as needed)
     }
     return () => {
       if (interval) clearInterval(interval);

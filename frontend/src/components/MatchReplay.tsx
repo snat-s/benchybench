@@ -92,7 +92,7 @@ export default function MatchReplay({ data }: { data: GameData }) {
             return prev;
           }
         });
-      }, 1000);
+      }, parseInt(process.env.NEXT_PUBLIC_ANIMATION_SPEED || '750'));
     }
     return () => clearInterval(timer);
   }, [playing, rounds.length]);

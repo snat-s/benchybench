@@ -119,7 +119,7 @@ export default function AsciiSnakePlayer({
   return (
     <div className="font-mono border border-gray-200 p-6 hover:shadow-lg transition-shadow inline-block min-w-fit">
       {/* Game Title */}
-      <div className="whitespace-pre-wrap break-all max-w-full text-sm mb-4 text-center h-[4.6em] line-clamp-3 overflow-hidden">
+      <div className="whitespace-pre-wrap break-all max-w-full text-sm mb-4 text-center line-clamp-3 overflow-hidden">
         {titleJsx}
       </div>
 

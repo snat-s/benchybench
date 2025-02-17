@@ -674,8 +674,6 @@ def main():
 
     print("\nFinal Scores:", game.scores)
     print(f"Game history (ID: {game.game_id}):")
-    for gs in game.history:
-        print(gs)
 
     game.save_history_to_json()
 
