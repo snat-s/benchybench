@@ -90,8 +90,8 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     Otherwise, raises a ValueError.
     """
     model_lower = model.lower()
-    openai_substrings = ["gpt-", "o1-", "o3-"]         # Add more OpenAI identifying substrings to this list if needed.
-    anthropic_substrings = ["claude"]     # Add more Anthropic identifying substrings to this list if needed.
+    openai_substrings = ["gpt-", "o1-", "o3-"]
+    anthropic_substrings = ["claude"]
     gemini_substrings = ["gemini"]
     together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
     ollama_substrings = ["ollama-"]
