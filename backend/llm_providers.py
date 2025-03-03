@@ -3,8 +3,13 @@ from openai import OpenAI
 import anthropic
 import google.generativeai as genai  # Add this import
 from together import Together
+from groq import Groq
 from ollama import chat
 from ollama import ChatResponse
+
+# USAGE NOTES:
+# To enable Claude's thinking tokens in Minesweeper benchmarks, append "-thinking" to the model name.
+# For example: "claude-3.7-sonnet-20240620-thinking"
 
 class LLMProviderInterface:
     """
@@ -32,12 +37,31 @@ class AnthropicProvider(LLMProviderInterface):
         self.client = anthropic.Anthropic(api_key=api_key)
     
     def get_response(self, model: str, prompt: str) -> str:
-        # According to Anthropic docs, this is one way to call the API.
-        response = self.client.messages.create(
-            model=model,
-            max_tokens=4096,
-            messages=[{"role": "user", "content": prompt}],
-        )
+        # Check if this is the special thinking token variant
+        if model.endswith("-thinking"):
+            # Remove the -thinking suffix for the actual API call
+            actual_model = model[:-9]
+            response = self.client.messages.create(
+                model=actual_model,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": prompt}],
+                thinking={
+                    "type": "enabled",
+                    "budget_tokens": 4_000, 
+                    },
+                stream=False
+            )
+            #print(response.content)
+            
+            return ("<think>\n" + response.content[0].thinking + "\n</think>\n" + response.content[1].text).strip()
+        else:
+            # Standard call without thinking tokens - this preserves the existing benchmark behavior
+            response = self.client.messages.create(
+                model=model,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": prompt}],
+                stream=False,
+            )
         return response.content[0].text.strip()
     
 class GeminiProvider(LLMProviderInterface):
@@ -64,6 +88,8 @@ class TogetherProvider(LLMProviderInterface):
         response = self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
+            #max_tokens=4096,
+            max_tokens=30_000,
         )
         return response.choices[0].message.content.strip()
 
@@ -81,6 +107,22 @@ class OllamaProvider(LLMProviderInterface):
         ])
         return response.message.content.strip()
 
+class GroqProvider(LLMProviderInterface):
+    def __init__(self, api_key: str):
+        self.client = Groq(api_key = api_key)
+
+    def get_response(self, model: str, prompt: str) -> str:
+        completion = self.client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.6,
+            max_completion_tokens=131072,
+            top_p=0.95,
+            stream=False,
+            #stop=None,
+        )
+        return completion.choices[0].message.content.strip()
+
 def create_llm_provider(model: str) -> LLMProviderInterface:
     """
     Factory function for creating an LLM provider instance.
@@ -91,10 +133,13 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     """
     model_lower = model.lower()
     openai_substrings = ["gpt-", "o1-", "o3-"]
+    # Note: "claude-3.7-sonnet-20240620-thinking" will also match here 
+    # and use the special thinking tokens feature in the AnthropicProvider
     anthropic_substrings = ["claude"]
     gemini_substrings = ["gemini"]
-    together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
+    #together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
     ollama_substrings = ["ollama-"]
+    groq_substrings = ["deepseek", "llama"]
 
     if any(substr.lower() in model_lower for substr in openai_substrings):
         if not os.getenv("OPENAI_API_KEY"):
@@ -110,9 +155,11 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
         return GeminiProvider(api_key=os.getenv("GOOGLE_API_KEY"))
     elif any(substr.lower() in model_lower for substr in ollama_substrings):
         return OllamaProvider(url=os.getenv("OLLAMA_URL", "http://localhost:11434"))
-    elif any(substr.lower() in model_lower for substr in together_substrings):
-        if not os.getenv("TOGETHERAI_API_KEY"):
-            raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")
-        return TogetherProvider(api_key=os.getenv("TOGETHERAI_API_KEY"))
+    elif any(substr.lower() in model_lower for substr in groq_substrings):
+        return GroqProvider(api_key=os.getenv("GROQ_API_KEY"))
+    #elif any(substr.lower() in model_lower for substr in together_substrings):
+    #    if not os.getenv("TOGETHERAI_API_KEY"):
+    #        raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")
+    #    return TogetherProvider(api_key=os.getenv("TOGETHERAI_API_KEY"))
     else:
         raise ValueError(f"Unsupported model: {model}")

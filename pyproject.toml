@@ -1,0 +1,17 @@
+[project]
+name = "benchybench"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.47.0",
+    "dotenv>=0.9.9",
+    "google-generativeai>=0.8.4",
+    "groq>=0.18.0",
+    "matplotlib>=3.10.0",
+    "ollama>=0.4.7",
+    "openai>=1.63.2",
+    "seaborn>=0.13.2",
+    "together>=1.4.1",
+]
