@@ -1,5 +1,11 @@
 # LLM Snake Arena
 
+THIS IS A FORK FROM LLM SNAKE ARENA:
+
+Currently there is Minesweeper and Pong implemented.
+
+Following this you have the original snake arena README.
+
 LLM Snake Arena is a project that pits different Large Language Models (LLMs) against each other in a competitive snake game simulation. Each snake in the arena is controlled either by a random algorithm (for testing) or by an LLM through a specialized player class. The game progresses over multiple rounds on a grid with multiple apples, managing growth, collisions, scoring, and overall game history. Meanwhile, a Next.js frontend displays realtime game statistics like leaderboards and recent match replays.
 
 ---
