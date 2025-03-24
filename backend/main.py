@@ -5,7 +5,6 @@ import time
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-from openai import OpenAI
 import json
 import uuid
 import argparse
@@ -79,32 +78,32 @@ class GameState:
         """
         # Create empty board
         board = [['.' for _ in range(self.width)] for _ in range(self.height)]
-        
+
         # Place apples
         for ax, ay in self.apples:
             board[ay][ax] = 'A'
-            
+
         # Place snakes
         for i, (snake_id, positions) in enumerate(self.snake_positions.items(), start=1):
             if not self.alive[snake_id]:
                 continue
-            
+
             # Place snake body
             for pos_idx, (x, y) in enumerate(positions):
                 if pos_idx == 0:  # Head
                     board[y][x] = str(i)  # Use snake number (1, 2, 3...) for head
                 else:  # Body/tail
                     board[y][x] = 'T'
-        
+
         # Build the string representation
         result = []
         # Print rows in reverse order (bottom to top)
         for y in range(self.height - 1, -1, -1):
             result.append(f"{y:2d} {' '.join(board[y])}")
-        
+
         # Add x-axis labels at the bottom
         result.append("   " + " ".join(str(i) for i in range(self.width)))
-        
+
         return "\n".join(result)
 
     def __repr__(self):
@@ -116,7 +115,7 @@ class GameState:
 class Player:
     """
     Base class/interface for player logic.
-    Each player is responsible for returning a move for its snake_id 
+    Each player is responsible for returning a move for its snake_id
     given the current game state.
     """
     def __init__(self, snake_id: str):
@@ -133,7 +132,7 @@ class RandomPlayer(Player):
     def get_move(self, game_state: GameState) -> str:
         snake_positions = game_state.snake_positions[self.snake_id]
         head_x, head_y = snake_positions[0]
-        
+
         # Calculate all possible next positions
         possible_moves = {
             UP:    (head_x, head_y + 1),  # Up => y + 1
@@ -141,27 +140,27 @@ class RandomPlayer(Player):
             LEFT:  (head_x - 1, head_y),
             RIGHT: (head_x + 1, head_y)
         }
-        
+
         # Filter out moves that:
         # 1. Hit walls
         # 2. Hit own body (except tail, which will move)
         valid_moves = []
         for move, (new_x, new_y) in possible_moves.items():
             # Check wall collisions
-            if (new_x < 0 or new_x >= game_state.width or 
+            if (new_x < 0 or new_x >= game_state.width or
                 new_y < 0 or new_y >= game_state.height):
                 continue
-                
+
             # Check self collisions (excluding tail which will move)
             if (new_x, new_y) in snake_positions[:-1]:
                 continue
-                
+
             valid_moves.append(move)
-        
+
         # If no valid moves, just return a random move (we'll die anyway)
         if not valid_moves:
             return random.choice(list(VALID_MOVES))
-            
+
         return random.choice(valid_moves)
 
 
@@ -217,7 +216,7 @@ class LLMPlayer(Player):
             f"The board size is {game_state.width}x{game_state.height}. Normal X,Y coordinates are used. Coordinates range from (0,0) at bottom left to ({game_state.width-1},{game_state.height-1}) at top right.\n"
             f"Apples at: {apples_str}\n\n"
             f"Your snake ID: {self.snake_id} which is currently positioned at {game_state.snake_positions[self.snake_id][0]} with body at {game_state.snake_positions[self.snake_id][1:]}\n\n"
-            f"Enemy snakes positions:\n" + 
+            f"Enemy snakes positions:\n" +
             "\n".join([f"* Snake #{sid} is at position {pos[0]} with body at {pos[1:]}" for sid, pos in game_state.snake_positions.items() if sid != self.snake_id]) + "\n\n"
             f"Board state:\n"
             f"{game_state.print_board()}\n\n"
@@ -259,7 +258,7 @@ class SnakeGame:
         self.max_rounds = max_rounds
         self.game_over = False
         self.start_time = time.time()
-        self.game_result = None 
+        self.game_result = None
 
         if game_id is None:
             self.game_id = str(uuid.uuid4())
@@ -269,7 +268,7 @@ class SnakeGame:
 
         # Store how many apples we want to keep on the board at all times
         self.num_apples = num_apples
-        
+
         # We store multiple apples as a set of (x, y) or a list.
         # Here, let's keep them as a list to preserve GameState JSON-friendliness.
         self.apples: List[Tuple[int,int]] = []
@@ -286,7 +285,7 @@ class SnakeGame:
     def add_snake(self, snake_id: str, player: Player):
         if snake_id in self.snakes:
             raise ValueError(f"Snake with id {snake_id} already exists.")
-        
+
         positions = self._random_free_cell()
 
         self.snakes[snake_id] = Snake([positions])
@@ -308,7 +307,7 @@ class SnakeGame:
     def _random_free_cell(self) -> Tuple[int,int]:
         """
         Return a random cell (x, y) not occupied by any snake or apple.
-        We'll do a simple loop to find one. 
+        We'll do a simple loop to find one.
         """
         while True:
             x = random.randint(0, self.width - 1)
@@ -320,7 +319,7 @@ class SnakeGame:
 
             if not occupied_by_snake and not occupied_by_apple:
                 return (x, y)
-    
+
     def get_current_state(self) -> GameState:
         """
         Return a snapshot of the current board as a GameState.
@@ -351,7 +350,7 @@ class SnakeGame:
         round_moves = {}
         # Take one snapshot of the state to pass to each player
         state_snapshot = game.get_current_state()
-        
+
         # We'll limit max_workers to the number of alive snakes (or just len of all snakes).
         # If you have many snakes, you can set a higher or lower limit based on preference.
         alive_snakes = [sid for sid, s in game.snakes.items() if s.alive]
@@ -362,7 +361,7 @@ class SnakeGame:
             for snake_id in alive_snakes:
                 player = game.players[snake_id]
                 futures[executor.submit(player.get_move, state_snapshot)] = snake_id
-            
+
             # Collect results as they complete
             for future in as_completed(futures):
                 snake_id = futures[future]
@@ -388,7 +387,7 @@ class SnakeGame:
         if self.game_over:
             print("Game is already over. No more rounds.")
             return
-        
+
         self.print_board()
 
         # --- PARALLEL GATHER OF MOVES ---
@@ -547,11 +546,11 @@ class SnakeGame:
                 "move_history": state.move_history
             }
             # Note: If any data is in tuples, it's okay because JSON
-            # can store them as lists. But Python's json library will 
+            # can store them as lists. But Python's json library will
             # automatically convert (x, y) to [x, y].
             output.append(state_dict)
         return output
-    
+
     def clean_model_name(self, model_name: str) -> str:
         # Check if the model name contains a provider prefix (e.g., "mistral/")
         if '/' in model_name:
@@ -569,7 +568,7 @@ class SnakeGame:
             sid: self.clean_model_name(player.model if hasattr(player, "model") else player.__class__.__name__)
             for sid, player in self.players.items()
         }
-        
+
         # Build metadata for the game
         metadata = {
             "game_id": self.game_id,
@@ -589,18 +588,18 @@ class SnakeGame:
             "max_rounds": self.max_rounds,
             "actual_rounds": self.round_number
         }
-        
+
         data = {
             "metadata": metadata,
             "rounds": self.serialize_history(self.history)
         }
-        
+
         # Ensure the output directory exists
         os.makedirs('completed_games', exist_ok=True)
-        
+
         with open(f'completed_games/{filename}', "w") as f:
             json.dump(data, f, indent=2)
-    
+
     def print_board(self):
         """
         Prints a visual representation of the current board state.
@@ -613,7 +612,7 @@ class SnakeGame:
         # Decide winner by highest score
         top_score = max(self.scores.values()) if self.scores else 0
         winners = [sid for sid, sc in self.scores.items() if sc == top_score]
-        
+
         # Record the game result per snake
         self.game_result = {}
         for sid in self.scores:
@@ -621,7 +620,7 @@ class SnakeGame:
                 self.game_result[sid] = "tied" if len(winners) > 1 else "won"
             else:
                 self.game_result[sid] = "lost"
-        
+
         if len(winners) == 1:
             print(f"The winner is {winners[0]} with score {top_score}.")
         else:
@@ -650,7 +649,7 @@ def main():
                         help="Maximum number of rounds")
     parser.add_argument("--num_apples", type=int, required=False, default=5,
                         help="Number of apples on the board")
-                        
+
 
     args = parser.parse_args()
 

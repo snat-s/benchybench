@@ -264,10 +264,7 @@ class MineSweeperLLMGamer(Player):
         if self.retry_count >= self.max_retries:
             raise Exception("Maximum retries exceeded - model is not providing valid moves")
         prompt = self._construct_prompt(board)
-        print(prompt)
-        exit()
         response_text = self.provider.get_response(self.model, prompt)
-        #print(response_text)
 
         move = self.get_move_from_response(response_text)
 

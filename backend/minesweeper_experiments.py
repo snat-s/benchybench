@@ -28,8 +28,9 @@ MODELS = [
         #"claude-3-7-sonnet-20250219-thinking",
         #"o1-mini-2024-09-12", 
         #"o1-preview-2024-09-12",
-        "deepseek-r1-distill-llama-70b",
+        #"deepseek-r1-distill-llama-70b",
         #"deepseek-r1-distill-qwen-32b",
+        #"Qwen/QwQ-32B",
 ]
 
 RUNS_PER_MODEL = 50

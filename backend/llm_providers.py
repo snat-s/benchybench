@@ -137,9 +137,9 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
     # and use the special thinking tokens feature in the AnthropicProvider
     anthropic_substrings = ["claude"]
     gemini_substrings = ["gemini"]
-    #together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
+    together_substrings = ["meta-llama", "deepseek", "Gryphe", "microsoft", "mistralai", "NousResearch", "nvidia", "Qwen", "upstage"]
     ollama_substrings = ["ollama-"]
-    groq_substrings = ["deepseek", "llama"]
+    #groq_substrings = ["deepseek", "llama"]
 
     if any(substr.lower() in model_lower for substr in openai_substrings):
         if not os.getenv("OPENAI_API_KEY"):
@@ -155,11 +155,11 @@ def create_llm_provider(model: str) -> LLMProviderInterface:
         return GeminiProvider(api_key=os.getenv("GOOGLE_API_KEY"))
     elif any(substr.lower() in model_lower for substr in ollama_substrings):
         return OllamaProvider(url=os.getenv("OLLAMA_URL", "http://localhost:11434"))
-    elif any(substr.lower() in model_lower for substr in groq_substrings):
-        return GroqProvider(api_key=os.getenv("GROQ_API_KEY"))
-    #elif any(substr.lower() in model_lower for substr in together_substrings):
-    #    if not os.getenv("TOGETHERAI_API_KEY"):
-    #        raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")
-    #    return TogetherProvider(api_key=os.getenv("TOGETHERAI_API_KEY"))
+    #elif any(substr.lower() in model_lower for substr in groq_substrings):
+    #    return GroqProvider(api_key=os.getenv("GROQ_API_KEY"))
+    elif any(substr.lower() in model_lower for substr in together_substrings):
+        if not os.getenv("TOGETHERAI_API_KEY"):
+            raise ValueError("TOGETHERAI_API_KEY is not set in the environment variables.")
+        return TogetherProvider(api_key=os.getenv("TOGETHERAI_API_KEY"))
     else:
         raise ValueError(f"Unsupported model: {model}")
